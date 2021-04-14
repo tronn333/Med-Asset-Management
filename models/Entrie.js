@@ -28,3 +28,5 @@ const entrySchema = new Schema({
     materials:Object,
     status:String
 })
+const entry = model('entries', entrySchema)
+module.exports = entry
