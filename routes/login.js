@@ -1,10 +1,21 @@
 const router = require("express").Router();
+const entry = require("../models/Entrie");
 const userModel = require("../models/user");
 
 router.get("/", (req, res) => {
   res.redirect("/login");
 });
-
+router.get("/allforms",async (req,res) =>{
+  const entries = await entry.find()
+  console.log(entries)
+  res.render('allforms',{entries})
+})
+router.get("/newform",async (req,res)=>{
+const newEntry = new entry({medcenter: 'medcenter1'})
+await newEntry.save
+console.log(newEntry._id);
+res.redirect(`/${newEntry._id}`)
+})
 router.get("/login", (req, res) => {
   res.render("login");
 });
