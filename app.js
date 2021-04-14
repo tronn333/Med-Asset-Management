@@ -9,7 +9,7 @@ const sessions = require('express-session');
 const MongoStore = require('connect-mongo');
 
 // Сообщаем express, что в качестве шаблонизатора используется "hbs".
-//app.set('view engine', 'hbs');
+app.set('view engine', 'hbs');
 app.set('cookieName', 'nashi')
 // Сообщаем express, что шаблона шаблонизаторая (вью) находятся в папке "ПапкаПроекта/views".
 app.set('views', path.join(__dirname, 'views'));
