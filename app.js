@@ -40,13 +40,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 // Подключаем middleware, которое позволяет читать переменные JavaScript, сохранённые в формате JSON в body HTTP-запроса.
 app.use(express.json());
-app.use((req,res,next)=>{
-    const userId = req.session?.user?.id
-    if (userId || req.path === '/login') {
-        return next()
-    }
-    return res.redirect('/login')
-})
+// app.use((req,res,next)=>{
+//     const userId = req.session?.user?.id
+//     if (userId || req.path === '/login') {
+//         return next()
+//     }
+//     return res.redirect('/login')
+// })
 
 app.use('/', loginRouter);
 
