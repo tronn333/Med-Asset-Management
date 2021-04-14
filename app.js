@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const app = express();
 const sessions = require('express-session');
 const MongoStore = require('connect-mongo');
+const loginRouter = require("./routes/login");
 
 // Сообщаем express, что в качестве шаблонизатора используется "hbs".
 app.set('view engine', 'hbs');
@@ -40,6 +41,7 @@ app.use(express.urlencoded({ extended: true }));
 // Подключаем middleware, которое позволяет читать переменные JavaScript, сохранённые в формате JSON в body HTTP-запроса.
 app.use(express.json());
 
+app.use('/', loginRouter);
 
 
 const port = process.env.PORT ?? 3000;
