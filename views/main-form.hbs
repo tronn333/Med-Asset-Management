@@ -23,7 +23,7 @@
       <h2 class="keyWord"><a name='title1'>Основное </a> </h2>
       <div id="column">
         <div class="row">
-          <label for="name"> Инициатор <span class="req">{{name}}</span></label>
+          <label for="name"> Инициатор <span id="name" class="req">{{name}}</span></label>
           <input type="hidden" name={{id}} id="string" class="txt" tabindex="1">
         </div>
 
@@ -354,30 +354,31 @@
     ---------------------------------------------------------------}}
     <div id="block">
       <h2 class="keyWord"> <a name='title5'> Расходные Материалы </a> </h2>
-      <div id="column" class="row">
+      <div id="column">
 
         <div>
-          <select type="text" name="materials[choosed]" id="string" class="txt" tabindex="11" size="1" >
-            <option value="none" hidden="">Выберите Материал </option>
-            <option value="1">p1</option>
-            <option value="2">p2</option>
-          </select>
+          <div id="materialUp" class="row">
+            <select type="text" name="materials[choosed]" id="string" class="txt" tabindex="11" size="1" required>
+              <option value="none" hidden="">Выберите Материал </option>
+              <option value="1">p1</option>
+              <option value="2">p2</option>
+            </select>
 
-          <select type="text" name="materials[using]" id="string" class="txt" tabindex="10" size="1" >
-            <option value="none" hidden="">Кол-во использование </option>
-            <option value="1">Многоразовое</option>
-            <option value="2">Одноразовое</option>
-          </select>
-          <input type="number" name="materials[much]" id="string" class="txt" tabindex="17" placeholder="Кол-во"
-             size="30">
+            <select type="text" name="materials[using]" id="string" class="txt" tabindex="10" size="1" required>
+              <option value="none" hidden="">Кол-во использование </option>
+              <option value="1">Многоразовое</option>
+              <option value="2">Одноразовое</option>
+            </select>
+            <input type="number" name="materials[much]" id="string" class="txt" tabindex="17" placeholder="Кол-во"
+              required size="30">
 
 
-          <select type="text" name="materials[meter]" id="string" class="txt" tabindex="11" size="1" >
-            <option value="none" hidden=""> Еденица измерения </option>
-            <option value="1">км</option>
-            <option value="2">м</option>
-          </select>
-
+            <select type="text" name="materials[meter]" id="string" class="txt" tabindex="11" size="1" required>
+              <option value="none" hidden=""> Еденица измерения </option>
+              <option value="1">км</option>
+              <option value="2">м</option>
+            </select>
+          </div>
 
           <hr align="center" size="2" width="100%">
 
@@ -417,7 +418,9 @@
           <hr align="center" size="2" width="100%" class="height">
         </div>
       </div>
-      <button>нажми</button>
+    </div>
+    <button class="sliding-button ">Отправить заявку!</button>
+
 
       {{!------------------------------------------------------
       ---------------------------------------------------------------}}
