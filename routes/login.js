@@ -29,7 +29,7 @@ router.get("/allforms",async (req,res) =>{
 router.get("/newform",async (req,res)=>{
 const newEntry = new entry({status:'editing',initiator:req.session.user.id,currentdepartment:`${req.session.user.department}`})
 console.log(newEntry._id);
-await entry.create(newEntry)
+// await entry.create(newEntry)
 res.redirect(`entry/${newEntry._id}`)
 })
 router.get("/login", (req, res) => {
@@ -61,9 +61,11 @@ router.get("/entry/:id", async (req, res) => {
   res.render("main-form",application);
 });
 router.post("/entry/:id", async (req, res) => {
-  // const application = await entry.find({_id:req.params.id})
-  // application = req.body
+  req.body._id = req.params.id
+  let application = await entry.create(req.body)
+  // Object.assign(application, req.body)
   // application.status='sent'
+  // application.save()
   console.log(req.body);
   res.redirect("/homepage");
 });
