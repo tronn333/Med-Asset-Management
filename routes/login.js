@@ -5,13 +5,23 @@ const userModel = require("../models/user");
 router.get("/", (req, res) => {
   res.redirect("/login");
 });
+
+
+router.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) return res.redirect('/')
+    res.clearCookie(req.app.get('cookieName'))
+    return res.redirect('/')
+  })
+});
+
 router.get("/allforms",async (req,res) =>{
   const entries = await entry.find()
   console.log(entries)
   res.render('allforms',{entries})
 })
 router.get("/newform",async (req,res)=>{
-const newEntry = new entry()
+const newEntry = new entry({status:'editing',initiator:req.session.user.id})
 console.log(newEntry._id);
 await entry.create(newEntry)
 res.redirect(`/${newEntry._id}`)
@@ -23,8 +33,9 @@ router.get("/login", (req, res) => {
 router.get("/homepage", (req, res) => {
   res.render("homepage");
 });
-router.get("/:id", (req, res) => {
-  res.render("main-form");
+router.get("/:id", async (req, res) => {
+  const application = await entry.find({_id:req.params.id})
+  res.render("main-form",application);
 });
 
 router.post("/login", async (req, res) => {
