@@ -49,19 +49,19 @@ app.use((req,res,next)=>{
     return res.redirect('/login')
 })
 
-// app.use(async (req, res, next) => {
-//   const userId = req.session?.user?.id
-//   if (userId) {
-//     const currentUser = await users.findById(userId)
-//     if (currentUser) {
-//       res.locals.name = currentUser.name
-//       res.locals.email  =currentUser.email
-//       res.locals.id = currentUser._id
-//     }
-//   }
+app.use(async (req, res, next) => {
+  const userId = req.session?.user?.id
+  if (userId) {
+    const currentUser = await users.findById(userId)
+    if (currentUser) {
+      res.locals.name = currentUser.name
+      res.locals.email  =currentUser.email
+      res.locals.id = currentUser._id
+    }
+  }
 
-//   next()
-// })
+  next()
+})
 
 app.use('/', loginRouter);
 
