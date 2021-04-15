@@ -1,17 +1,17 @@
 const {Schema, model} = require('mongoose')
 const entrySchema = new Schema({
-    initiator:[{
+    initiator:{
         type: Schema.Types.ObjectId,
         ref: 'User'
-    }],
+    },
     medcenter: String,
     division: String,
     specialisation: String,
     anestasia: String,
-    anestasiaType:[{
+    anestasiaType:{
         type: String,
         default: 'net'
-    }],
+    },
     serviceCode:String,
     serviceNameRus:String,
     serviceNameEng:String,

@@ -11,9 +11,9 @@ router.get("/allforms",async (req,res) =>{
   res.render('allforms',{entries})
 })
 router.get("/newform",async (req,res)=>{
-const newEntry = new entry({medcenter: 'medcenter1'})
-await newEntry.save
+const newEntry = new entry()
 console.log(newEntry._id);
+await entry.create(newEntry)
 res.redirect(`/${newEntry._id}`)
 })
 router.get("/login", (req, res) => {
