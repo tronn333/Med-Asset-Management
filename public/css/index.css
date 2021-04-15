@@ -7,7 +7,7 @@ a {
 }
 .head:hover {
   padding: 10px 10px 10px 10px;
-  background: rgb(160, 212, 212);
+  background: linear-gradient(180deg, #977f7a, #ad7a79, #9e7384, #d50082);
 }
 
 /* Style the header */
@@ -32,6 +32,10 @@ a {
 .sticky + .content {
   padding-top: 102px;
 }
+/*  */
+#name {
+  font-weight: bold;
+}
 
 #materialUp {
   display: flex;
@@ -54,9 +58,9 @@ a {
 div {
   background-color: rgb(191, 202, 212);
 }
-/* button {
-  text-align: center;
-} */
+.button {
+  align-items: center;
+}
 .keyWord {
   /* text-align: left; */
   padding-top: 30px;
@@ -66,4 +70,43 @@ div {
 }
 .height {
   margin-bottom: 50px;
+}
+
+/* кнопочка */
+
+.sliding-button {
+  text-decoration: none;
+  color: rgb(129, 117, 117);
+  display: inline-block;
+  position: relative;
+  padding: 15px 30px;
+  border: 1px solid;
+  border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  border-image-slice: 1;
+  margin: 10px 20px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 2px;
+  transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.sliding-button:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  color: white;
+  background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.sliding-button:hover {
+  background: rgba(255, 255, 255, 0);
+}
+.sliding-button:hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
 }
