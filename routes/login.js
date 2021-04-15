@@ -5,9 +5,7 @@ const userModel = require("../models/user");
 
 router.get("/", (req, res) => {
   res.redirect("/homepage");
-});
-
-
+})
 router.get('/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) return res.redirect('/')
@@ -61,13 +59,24 @@ router.get("/entry/:id", async (req, res) => {
   res.render("main-form", application);
 });
 router.post("/entry/:id", async (req, res) => {
+  req.body.initiator= req.session.user.id
   req.body._id = req.params.id
-  console.log(req.body);
+  req.body.currentdepartment = `${req.session.user.department}`
+  for (const item in req.body) {
+    if (req.body[item] == 'none' || req.body[item] == '') {
+      delete req.body[item]
+    }
+    console.log(typeof req.body[item]);
+    if (typeof req.body[item] === 'object'){
+      for (const key in req.body[item])
+      {
+        if (req.body[item][key] == 'none' || req.body[item][key] == '') {
+          delete req.body[item][key]
+        }
+      }
+    }
+  }
   let application = await entry.create(req.body)
-  // Object.assign(application, req.body)
-  // application.status='sent'
-  // application.save()
-  console.log(req.body);
   res.redirect("/homepage");
 });
 
