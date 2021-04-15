@@ -14,9 +14,9 @@ function myFunction() {
 const form = document.querySelector("#contactform")
 
 form.addEventListener("click", (e) => {
-  e.preventDefault();
   console.log(e);
   if (e.target.matches("#stringAdd")) {
+    e.preventDefault();
     let counter = 1;
     let div = e.target.closest("div");
     console.log(div);
