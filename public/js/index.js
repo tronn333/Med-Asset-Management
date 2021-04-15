@@ -14,9 +14,9 @@ function myFunction() {
 const form = document.querySelector("#contactform")
 
 form.addEventListener("click", (e) => {
-  e.preventDefault();
   console.log(e);
   if (e.target.matches("#stringAdd")) {
+    e.preventDefault();
     let counter = 1;
     let div = e.target.closest("div");
     console.log(div);
@@ -24,10 +24,9 @@ form.addEventListener("click", (e) => {
     let clone = firstDiv.cloneNode(true);
     let arr = [...clone.children];
     for (let i = 0; i < arr.length; i++) {
-      {
         let theName = arr[i].getAttribute('name');
+        arr[i].value = " "
         arr[i].setAttribute('name', theName + counter);
-      }
     }
     counter += 1;
     console.log(clone);
