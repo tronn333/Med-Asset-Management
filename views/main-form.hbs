@@ -75,9 +75,9 @@
         </div>
 
 
-        <hr align="center" size="2" width="100%">
+        <hr align="center" size="2" id="anestesia1" width="100%" style="display: none;">
 
-        <div class="row">
+        <div class="row" id="anestesia" style="display: none;">
           <label for="message"> Вид анестезии <span class="req">*</span></label>
           <select type="text" name="anestasiaType" id="string" class="txt" tabindex="5" size="1" >
             <option value="none" hidden="">Выберите тип</option>
@@ -138,12 +138,12 @@
         </div>
 
 
-        <hr align="center" size="2" width="100%">
+        <hr align="center" style="display: none;" id ="subpodryad1" size="2" width="100%">
 
 
 
 
-        <div class="row">
+        <div class="row" id ="subpodryad2" style="display: none;">
           <label for="message"> Субподрядная организация <span class="req">*</span></label>
           <select type="text" name="subpodryadOrg" id="string" class="txt" tabindex="11" size="1" >
             <option value="none" hidden="">Выберите тип</option>
@@ -152,11 +152,11 @@
           </select>
         </div>
 
-        <hr align="center" size="2" width="100%">
+        <hr align="center" size="2" width="100%" style="display: none;" id ="subpodryad3">
 
 
 
-        <div class="row">
+        <div class="row" id ="subpodryad4" style="display: none;">
           <label for="name"> Стоимость субподряда <span class="req">*</span></label>
           <input type="number" name="priceSubpodryad" id="string" class="txt" tabindex="12" placeholder="субподряд"
             >
@@ -166,7 +166,7 @@
 
 
 
-        <div class="row">
+        <div class="row">git 
           <label for="name"> Кол-во услуг в месяц <span class="req"></span></label>
           <input type="number" name="numberOfServices" id="string" class="txt" tabindex="13" placeholder=" Кол-во услуг"
             >
