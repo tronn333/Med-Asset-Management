@@ -15,22 +15,22 @@ router.get('/logout', (req, res) => {
     return res.redirect('/')
   })
 });
-router.get('/yourforms',async (req,res) =>{
-  const entries = await entry.find({currentdepartment:`${req.session.user.department}`})
+router.get('/yourforms', async (req, res) => {
+  const entries = await entry.find({ currentdepartment: `${req.session.user.department}` })
   console.log(entries)
-  res.render('allforms',{entries})
+  res.render('allforms', { entries })
 })
 
-router.get("/allforms",async (req,res) =>{
+router.get("/allforms", async (req, res) => {
   const entries = await entry.find()
   console.log(entries)
-  res.render('allforms',{entries})
+  res.render('allforms', { entries })
 })
-router.get("/newform",async (req,res)=>{
-const newEntry = new entry({status:'editing',initiator:req.session.user.id,currentdepartment:`${req.session.user.department}`})
-console.log(newEntry._id);
-// await entry.create(newEntry)
-res.redirect(`entry/${newEntry._id}`)
+router.get("/newform", async (req, res) => {
+  const newEntry = new entry({ status: 'editing', initiator: req.session.user.id, currentdepartment: `${req.session.user.department}` })
+  console.log(newEntry._id);
+  // await entry.create(newEntry)
+  res.redirect(`entry/${newEntry._id}`)
 })
 router.get("/login", (req, res) => {
   res.render("login");
@@ -57,11 +57,12 @@ router.get("/homepage", (req, res) => {
   res.render("homepage");
 });
 router.get("/entry/:id", async (req, res) => {
-  const application = await entry.find({_id:req.params.id})
-  res.render("main-form",application);
+  const application = await entry.find({ _id: req.params.id })
+  res.render("main-form", application);
 });
 router.post("/entry/:id", async (req, res) => {
   req.body._id = req.params.id
+  console.log(req.body);
   let application = await entry.create(req.body)
   // Object.assign(application, req.body)
   // application.status='sent'

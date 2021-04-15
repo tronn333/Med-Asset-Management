@@ -1,4 +1,6 @@
-document.onscroll = function () { myFunction() };
+document.onscroll = function () {
+  myFunction();
+};
 
 let header = document.getElementById("myHeader");
 let sticky = header.offsetTop;
@@ -11,7 +13,7 @@ function myFunction() {
   }
 }
 
-const form = document.querySelector("#contactform")
+const form = document.querySelector("#contactform");
 
 form.addEventListener("click", (e) => {
   console.log(e);
@@ -24,12 +26,12 @@ form.addEventListener("click", (e) => {
     let clone = firstDiv.cloneNode(true);
     let arr = [...clone.children];
     for (let i = 0; i < arr.length; i++) {
-        let theName = arr[i].getAttribute('name');
-        arr[i].value = " "
-        arr[i].setAttribute('name', theName + counter);
+      let theName = arr[i].getAttribute('name');
+      arr[i].value = " "
+      arr[i].setAttribute('name', theName + counter);
     }
     counter += 1;
     console.log(clone);
     firstDiv.after(clone)
   }
-})
+});
