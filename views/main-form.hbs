@@ -1,31 +1,275 @@
+<body>
+  <link rel="stylesheet" href="/css/index.css">
+  <script defer src="/js/index.js"></script>
+</body>
+
+<div class="header" id="myHeader">
+  <h2> Заявка </h2>
+  <h2> Персонал </h2>
+  <h2> Помещение </h2>
+  <h2> Оборудование </h2>
+  <h2> Материалы </h2>
+  <h2> История </h2>
+</div>
+
 <div id="w">
-  <h1>ЗАЯВКА !</h1>
+  <h1>Заявка!!!</h1>
   <form id="contactform" name="contact" method="post" action="#">
-    <p class="note"><span class="req">*</span> </p>
+
+    <hr align="center" size="3" color="black" width="100%">
+
+
+
+    <h2 class="keyWord"> Основное </h2>
+    <div class="row">
+      <label for="name"> Инициатор <span class="req">*</span></label>
+      <input type="text" name="name" id="string" class="txt" tabindex="1" placeholder="Ваше имечко" required>
+    </div>
+
+    <hr align="center" size="2" width="100%">
 
     <div class="row">
-      <label for="name">Ваше Имя <span class="req">*</span></label>
-      <select type="text" name="name" id="name" class="txt" tabindex="1" size="1">
+      <label for="email"> Медицинский центр<span class="req">*</span></label>
+      <select type="text" name="name" id="string" class="txt" tabindex="2" size="1" required>
         <option value="none" hidden="">Выберите тип</option>
         <option value="1">p1</option>
         <option value="2">p2</option>
       </select>
     </div>
 
-    <div class="row">
-      <label for="email">E-mail Адрес <span class="req">*</span></label>
-      <input type="email" name="email" id="email" class="txt" tabindex="2" placeholder=" address@mail.ru" required>
-    </div>
+    <hr align="center" size="2" width="100%">
 
     <div class="row">
-      <label for="subject">Тема <span class="req">*</span></label>
-      <input type="text" name="subject" id="subject" class="txt" tabindex="3" placeholder="Тема письма" required>
+      <label for="subject"> Подразделение <span class="req">*</span></label>
+      <select type="text" name="name" id="string" class="txt" tabindex="3" size="1" required>
+        <option value="none" hidden="">Выберите тип</option>
+        <option value="1">p1</option>
+        <option value="2">p2</option>
+      </select>
     </div>
 
+    <hr align="center" size="2" width="100%">
+
     <div class="row">
-      <label for="message">Сообщение <span class="req">*</span></label>
-      <textarea name="message" id="message" class="txtarea" tabindex="4" required></textarea>
+      <label for="message"> Специализация <span class="req">*</span></label>
+      <select type="text" name="name" id="string" class="txt" tabindex="4" size="1" required>
+        <option value="none" hidden="">Выберите тип</option>
+        <option value="1">p1</option>
+        <option value="2">p2</option>
+      </select>
     </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <div class="row">
+      <label for="message"> Анестезия <span class="req">*</span></label>
+      <select type="text" name="name" id="string" class="txt" tabindex="5" size="1" required>
+        <option value="none" hidden="">Выберите тип</option>
+        <option value="1">Да</option>
+        <option value="2">Нет</option>
+      </select>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <div class="row">
+      <label for="message"> Вид анестезии <span class="req">*</span></label>
+      <select type="text" name="name" id="string" class="txt" tabindex="5" size="1" required>
+        <option value="none" hidden="">Выберите тип</option>
+        <option value="1">p1</option>
+        <option value="2">p2</option>
+      </select>
+    </div>
+
+    <hr align="center" size="3" color="black" width="100%"> {{!--------- -------------}}
+
+    <div class="row">
+      <label for="name"> Код услуги <span class="req"></span></label>
+      <input type="text" name="name" id="string" class="txt" tabindex="6" placeholder="Ваше имечко" required>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+
+    <div class="row">
+      <label for="name"> Название услуги на русском <span class="req">*</span></label>
+      <input type="text" name="name" id="string" class="txt" tabindex="7" placeholder="Ваше имечко" required>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+
+    <div class="row">
+      <label for="name"> Название услуги на английском <span class="req"></span></label>
+      <input type="text" name="name" id="string" class="txt" tabindex="8" placeholder="Ваше имечко" required>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+
+    <div class="row">
+      <label for="name"> Стоимость, у.е. <span class="req">*</span></label>
+      <input type="text" name="name" id="string" class="txt" tabindex="9" placeholder="Ваше имечко" required>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+
+    <div class="row">
+      <label for="message"> Субподряд <span class="req">*</span></label>
+      <select type="text" name="name" id="string" class="txt" tabindex="10" size="1" required>
+        <option value="none" hidden="">Выберите тип</option>
+        <option value="1">Да</option>
+        <option value="2">Нет</option>
+      </select>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+
+    <div class="row">
+      <label for="message"> Субподрядная организация <span class="req">*</span></label>
+      <select type="text" name="name" id="string" class="txt" tabindex="11" size="1" required>
+        <option value="none" hidden="">Выберите тип</option>
+        <option value="1">1</option>
+        <option value="2">p2</option>
+      </select>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+
+    <div class="row">
+      <label for="name"> Стоимость субподряда <span class="req">*</span></label>
+      <input type="number" name="name" id="string" class="txt" tabindex="12" placeholder="Ваше имечко" required>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+
+    <div class="row">
+      <label for="name"> Кол-во услуг в месяц <span class="req"></span></label>
+      <input type="number" name="name" id="string" class="txt" tabindex="13" placeholder="Ваше имечко" required>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+
+    <div class="row">
+      <label for="name"> Аналог услуги <span class="req"></span></label>
+      <input type="text" name="name" id="string" class="txt" tabindex="14" placeholder="Ваше имечко" required>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+
+    <div class="row">
+      <label for="name"> Комментарии <span class="req"></span></label>
+      <input type="text" name="name" id="string" class="txt" tabindex="15" placeholder="Ваше имечко" required>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <div class="row">
+      <label for="name"> Комментарии <span class="req"></span></label>
+      <input type="text" name="name" id="string" class="txt" tabindex="16" placeholder="Ваше имечко" required>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <div class="row">
+      <label for="name"> Дата запуска услуги <span class="req"></span></label>
+      <input type="date" name="name" id="string" class="txt" tabindex="17" placeholder="Ваше имечко" required>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <hr align="center" size="3" color="black" width="100%">
+    <hr align="center" size="3" color="black" width="100%">
+    {{!--------------------------------------------------- -----------------------------------------------------}}
+
+    <h2 class="keyWord"> Трудозатраты </h2>
+    <div>
+      <div class="row">
+        <select type="text" name="name" id="string" class="txt" tabindex="11" size="1" required>
+          <option value="none" hidden="">Выберите исполнителя </option>
+          <option value="1">p1</option>
+          <option value="2">p2</option>
+        </select>
+        <input type="number" name="name" id="string" class="txt" tabindex="17" placeholder="Время работы, мин" required
+          size="30">
+      </div>
+
+      <hr align="center" size="2" width="100%">
+
+      <input type="submit" name="name" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <h4 class="handWord"> Если помещение не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+    </h4>
+
+    <hr align="center" size="3" color="black" width="100%">
+
+
+    <div class="row">
+      <input type="text" name="name" id="string" class="txt" tabindex="17" placeholder="Оборудование" required>
+      <input type="text" name="name" id="string" class="txt" tabindex="17" placeholder="Время работы, мин" required
+        size="30">
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <input type="submit" name="name" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+    <hr align="center" size="2" width="100%">
+
+    {{!------------------------------------------------------ ---------------------------------------------------------------}}
+
+    <h2 class="keyWord">  Помещения </h2>
+    <div>
+      <div class="row">
+        <select type="text" name="name" id="string" class="txt" tabindex="11" size="1" required>
+          <option value="none" hidden="">Выберите Помещение </option>
+          <option value="1">p1</option>
+          <option value="2">p2</option>
+        </select>
+        <input type="number" name="name" id="string" class="txt" tabindex="17"
+          placeholder="Время работы в помещении, мин" required size="30">
+      </div>
+
+      <hr align="center" size="2" width="100%">
+
+      <input type="submit" name="name" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+    </h4>
+
+    <hr align="center" size="3" color="black" width="100%">
+
+
+    <div class="row">
+      <input type="text" name="name" id="string" class="txt" tabindex="17" placeholder="Оборудование" required>
+      <input type="text" name="name" id="string" class="txt" tabindex="17" placeholder="Время работы в помещении, мин"
+        required size="30">
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <input type="submit" name="name" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+    <hr align="center" size="2" width="100%">
+
+    {{!------------------------------------------------------ ---------------------------------------------------------------}}
+
+
+
+
+
 
     {{!-- <div class="center">
 <input type="submit" id="submitbtn" name="submitbtn" tabindex="5" value="Отправить Сообщение">
