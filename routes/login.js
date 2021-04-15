@@ -1,9 +1,10 @@
 const router = require("express").Router();
+// const { Router } = require("express");
 const entry = require("../models/Entrie");
 const userModel = require("../models/user");
 
 router.get("/", (req, res) => {
-  res.redirect("/login");
+  res.redirect("/homepage");
 });
 
 
@@ -14,6 +15,11 @@ router.get('/logout', (req, res) => {
     return res.redirect('/')
   })
 });
+router.get('/yourforms',async (req,res) =>{
+  const entries = await entry.find({currentdepartment:`${req.session.user.department}`})
+  console.log(entries)
+  res.render('allforms',{entries})
+})
 
 router.get("/allforms",async (req,res) =>{
   const entries = await entry.find()
@@ -21,7 +27,7 @@ router.get("/allforms",async (req,res) =>{
   res.render('allforms',{entries})
 })
 router.get("/newform",async (req,res)=>{
-const newEntry = new entry({status:'editing',initiator:req.session.user.id,currentdepartment:'department'})
+const newEntry = new entry({status:'editing',initiator:req.session.user.id,currentdepartment:`${req.session.user.department}`})
 console.log(newEntry._id);
 await entry.create(newEntry)
 res.redirect(`entry/${newEntry._id}`)
@@ -54,12 +60,12 @@ router.get("/entry/:id", async (req, res) => {
   const application = await entry.find({_id:req.params.id})
   res.render("main-form",application);
 });
-router.post("entry/:id", async (req, res) => {
+router.post("/entry/:id", async (req, res) => {
   // const application = await entry.find({_id:req.params.id})
   // application = req.body
   // application.status='sent'
   console.log(req.body);
-  res.redirect("homepage");
+  res.redirect("/homepage");
 });
 
 
