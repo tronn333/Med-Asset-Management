@@ -20,14 +20,17 @@ form.addEventListener("click", (e) => {
     let counter = 1;
     let div = e.target.closest("div");
     console.log(div);
-    let clone = div.cloneNode(true);
+    let firstDiv = div.firstElementChild
+    let clone = firstDiv.cloneNode(true);
     let arr = [...clone.children];
     for (let i = 0; i < arr.length; i++) {
-      let theName = arr[i].getAttribute('name');
-      arr[i].setAttribute('name', theName + counter);
+      {
+        let theName = arr[i].getAttribute('name');
+        arr[i].setAttribute('name', theName + counter);
+      }
     }
     counter += 1;
     console.log(clone);
-    div.after(clone)
+    firstDiv.after(clone)
   }
 })
