@@ -57,6 +57,9 @@ app.use(async (req, res, next) => {
       res.locals.name = currentUser.name
       res.locals.email  =currentUser.email
       res.locals.id = currentUser._id
+      if (currentUser.admin=="false"){
+        res.locals.neadmin=true
+      }
     }
   }
 
