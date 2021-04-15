@@ -1,4 +1,6 @@
-document.onscroll = function () { myFunction() };
+document.onscroll = function () {
+  myFunction();
+};
 
 let header = document.getElementById("myHeader");
 let sticky = header.offsetTop;
@@ -11,7 +13,7 @@ function myFunction() {
   }
 }
 
-const form = document.querySelector("#contactform")
+const form = document.querySelector("#contactform");
 
 form.addEventListener("click", (e) => {
   console.log(e);
@@ -33,4 +35,4 @@ form.addEventListener("click", (e) => {
     console.log(clone);
     firstDiv.after(clone)
   }
-})
+});
