@@ -27,7 +27,8 @@ const entrySchema = new Schema({
     premises:Object,
     equipment:Object,
     materials:Object,
-    status:String
+    status:String,
+    currentdepartment:String
 })
 const entry = model('entries', entrySchema)
 module.exports = entry
