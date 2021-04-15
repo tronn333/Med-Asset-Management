@@ -61,9 +61,10 @@ router.get("/entry/:id", async (req, res) => {
   res.render("main-form",application);
 });
 router.post("/entry/:id", async (req, res) => {
-  // const application = await entry.find({_id:req.params.id})
-  // application = req.body
+  let application = await entry.findOneAndUpdate({_id:req.params.id},req.body)
+  // Object.assign(application, req.body)
   // application.status='sent'
+  // application.save()
   console.log(req.body);
   res.redirect("/homepage");
 });
