@@ -4,12 +4,12 @@
 </body>
 
 <div class="header" id="myHeader">
-  <h2> Заявка </h2>
-  <h2> Персонал </h2>
-  <h2> Помещение </h2>
-  <h2> Оборудование </h2>
-  <h2> Материалы </h2>
-  <h2> История </h2>
+  <h2><a href="#title1">Заявка </a> </h2>
+  <h2><a href="#title2">Персонал </a> </h2>
+  <h2> <a href="#title3">Помещение </a> </h2>
+  <h2> <a href="#title4">Оборудование </a> </h2>
+  <h2> <a href="#title5">Материалы </a> </h2>
+  <h2> <a href="#title6">История </a> </h2>
 </div>
 
 <div id="w">
@@ -18,346 +18,413 @@
 
     <hr align="center" size="3" color="black" width="100%">
 
-    <h2 class="keyWord"> Основное </h2>
-    <div class="row">
-      <label for="name"> Инициатор <span class="req">{{name}}</span></label>
-      <input type="text" name={{id}} id="string" class="txt" tabindex="1" placeholder="Ваше имечко" required>
+
+
+
+    <div id="block">
+      <h2 class="keyWord"><a name='title1'>Основное </a> </h2>
+      <div id="column">
+        <div class="row">
+          <label for="name"> Инициатор <span class="req">{{name}}</span></label>
+          <input type="hidden" name={{id}} id="string" class="txt" tabindex="1">
+        </div>
+
+        <hr align="center" size="2" width="100%">
+        <div class="row">
+          <label for="email"> Медицинский центр<span class="req">*</span></label>
+          <select type="text" name="medcenter" id="string" class="txt" tabindex="2" size="1" required>
+            <option value="none" hidden="">Выберите тип</option>
+            <option value="1">p1</option>
+            <option value="2">p2</option>
+          </select>
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+        <div class="row">
+          <label for="subject"> Подразделение <span class="req">*</span></label>
+          <select type="text" name="division" id="string" class="txt" tabindex="3" size="1" required>
+            <option value="none" hidden="">Выберите тип</option>
+            <option value="1">p1</option>
+            <option value="2">p2</option>
+          </select>
+        </div>
+
+
+        <hr align="center" size="2" width="100%">
+
+
+        <div class="row">
+          <label for="message"> Специализация <span class="req">*</span></label>
+          <select type="text" name="specialisation" id="string" class="txt" tabindex="4" size="1" required>
+            <option value="none" hidden="">Выберите тип</option>
+            <option value="1">p1</option>
+            <option value="2">p2</option>
+          </select>
+        </div>
+
+
+        <hr align="center" size="2" width="100%">
+
+        <div class="row">
+          <label for="message"> Анестезия <span class="req">*</span></label>
+          <select type="text" name="anestasia" id="string" class="txt" tabindex="5" size="1" required>
+            <option value="none" hidden="">Выберите тип</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+          </select>
+        </div>
+
+
+        <hr align="center" size="2" width="100%">
+
+        <div class="row">
+          <label for="message"> Вид анестезии <span class="req">*</span></label>
+          <select type="text" name="anestasiaType" id="string" class="txt" tabindex="5" size="1" required>
+            <option value="none" hidden="">Выберите тип</option>
+            <option value="1">p1</option>
+            <option value="2">p2</option>
+          </select>
+        </div>
+
+
+        <hr align="center" size="3" color="black" width="100%"> {{!--------- -------------}}
+
+        <div class="row">
+          <label for="name"> Код услуги <span class="req"></span></label>
+          <input type="text" name="serviceCode" id="string" class="txt" tabindex="6" placeholder="Код услуги" required>
+        </div>
+
+
+        <hr align="center" size="2" width="100%">
+
+
+
+        <div class="row">
+          <label for="name"> Название услуги на русском <span class="req">*</span></label>
+          <input type="text" name="serviceNameRus" id="string" class="txt" tabindex="7" placeholder="на русском"
+            required>
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+
+
+        <div class="row">
+          <label for="name"> Название услуги на английском <span class="req"></span></label>
+          <input type="text" name="serviceNameEng" id="string" class="txt" tabindex="8" placeholder="на английском"
+            required>
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+
+
+        <div class="row">
+          <label for="name"> Стоимость, у.е. <span class="req">*</span></label>
+          <input type="text" name="price" id="string" class="txt" tabindex="9" placeholder="Стоимость" required>
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+
+
+        <div class="row">
+          <label for="message"> Субподряд <span class="req">*</span></label>
+          <select type="text" name="subpodryad" id="string" class="txt" tabindex="10" size="1" required>
+            <option value="none" hidden="">Выберите тип</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+          </select>
+        </div>
+
+
+        <hr align="center" size="2" width="100%">
+
+
+
+
+        <div class="row">
+          <label for="message"> Субподрядная организация <span class="req">*</span></label>
+          <select type="text" name="subpodryadOrg" id="string" class="txt" tabindex="11" size="1" required>
+            <option value="none" hidden="">Выберите тип</option>
+            <option value="1">1</option>
+            <option value="2">p2</option>
+          </select>
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+
+
+        <div class="row">
+          <label for="name"> Стоимость субподряда <span class="req">*</span></label>
+          <input type="number" name="priceSubpodryad" id="string" class="txt" tabindex="12" placeholder="субподряд"
+            required>
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+
+
+        <div class="row">
+          <label for="name"> Кол-во услуг в месяц <span class="req"></span></label>
+          <input type="number" name="numberOfServices" id="string" class="txt" tabindex="13" placeholder=" Кол-во услуг"
+            required>
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+
+
+        <div class="row">
+          <label for="name"> Аналог услуги <span class="req"></span></label>
+          <input type="text" name="serviceAnalog" id="string" class="txt" tabindex="14" placeholder="Аналог услуги"
+            required>
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+        <div class="row">
+          <label for="name"> Комментарии <span class="req"></span></label>
+          <input type="text" name="comment" id="string" class="txt" tabindex="15" placeholder="Комментарии" required>
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+
+        <div class="row">
+          <label for="name"> Дата запуска услуги <span class="req"></span></label>
+          <input type="date" name="dateOfStart" id="string" class="txt" tabindex="17" placeholder="Дата" required>
+        </div>
+
+        <hr align="center" size="2" width="100%">
+      </div>
+
     </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <div class="row">
-      <label for="email"> Медицинский центр<span class="req">*</span></label>
-      <select type="text" name="medcenter" id="string" class="txt" tabindex="2" size="1" required>
-        <option value="none" hidden="">Выберите тип</option>
-        <option value="1">p1</option>
-        <option value="2">p2</option>
-      </select>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <div class="row">
-      <label for="subject"> Подразделение <span class="req">*</span></label>
-      <select type="text" name="division" id="string" class="txt" tabindex="3" size="1" required>
-        <option value="none" hidden="">Выберите тип</option>
-        <option value="1">p1</option>
-        <option value="2">p2</option>
-      </select>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <div class="row">
-      <label for="message"> Специализация <span class="req">*</span></label>
-      <select type="text" name="specialisation" id="string" class="txt" tabindex="4" size="1" required>
-        <option value="none" hidden="">Выберите тип</option>
-        <option value="1">p1</option>
-        <option value="2">p2</option>
-      </select>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <div class="row">
-      <label for="message"> Анестезия <span class="req">*</span></label>
-      <select type="text" name="anestasia" id="string" class="txt" tabindex="5" size="1" required>
-        <option value="none" hidden="">Выберите тип</option>
-        <option value="1">Да</option>
-        <option value="2">Нет</option>
-      </select>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <div class="row">
-      <label for="message"> Вид анестезии <span class="req">*</span></label>
-      <select type="text" name="anestasiaType" id="string" class="txt" tabindex="5" size="1" required>
-        <option value="none" hidden="">Выберите тип</option>
-        <option value="1">p1</option>
-        <option value="2">p2</option>
-      </select>
-    </div>
-
-    <hr align="center" size="3" color="black" width="100%"> {{!--------- -------------}}
-
-    <div class="row">
-      <label for="name"> Код услуги <span class="req"></span></label>
-      <input type="text" name="serviceCode" id="string" class="txt" tabindex="6" placeholder="Ваше имечко" required>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-
-    <div class="row">
-      <label for="name"> Название услуги на русском <span class="req">*</span></label>
-      <input type="text" name="serviceNameRus" id="string" class="txt" tabindex="7" placeholder="Ваше имечко" required>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-
-    <div class="row">
-      <label for="name"> Название услуги на английском <span class="req"></span></label>
-      <input type="text" name="serviceNameEng" id="string" class="txt" tabindex="8" placeholder="Ваше имечко" required>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-
-    <div class="row">
-      <label for="name"> Стоимость, у.е. <span class="req">*</span></label>
-      <input type="text" name="price" id="string" class="txt" tabindex="9" placeholder="Ваше имечко" required>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-
-    <div class="row">
-      <label for="message"> Субподряд <span class="req">*</span></label>
-      <select type="text" name="subpodryad" id="string" class="txt" tabindex="10" size="1" required>
-        <option value="none" hidden="">Выберите тип</option>
-        <option value="1">Да</option>
-        <option value="2">Нет</option>
-      </select>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-
-    <div class="row">
-      <label for="message"> Субподрядная организация <span class="req">*</span></label>
-      <select type="text" name="subpodryadOrg" id="string" class="txt" tabindex="11" size="1" required>
-        <option value="none" hidden="">Выберите тип</option>
-        <option value="1">1</option>
-        <option value="2">p2</option>
-      </select>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-
-    <div class="row">
-      <label for="name"> Стоимость субподряда <span class="req">*</span></label>
-      <input type="number" name="priceSubpodryad" id="string" class="txt" tabindex="12" placeholder="Ваше имечко" required>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-
-    <div class="row">
-      <label for="name"> Кол-во услуг в месяц <span class="req"></span></label>
-      <input type="number" name="numberOfServices" id="string" class="txt" tabindex="13" placeholder="Ваше имечко" required>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-
-    <div class="row">
-      <label for="name"> Аналог услуги <span class="req"></span></label>
-      <input type="text" name="serviceAnalog" id="string" class="txt" tabindex="14" placeholder="Ваше имечко" required>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <div class="row">
-      <label for="name"> Комментарии <span class="req"></span></label>
-      <input type="text" name="comment" id="string" class="txt" tabindex="16" placeholder="Ваше имечко" required>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <div class="row">
-      <label for="name"> Дата запуска услуги <span class="req"></span></label>
-      <input type="date" name="dateOfStart" id="string" class="txt" tabindex="17" placeholder="Ваше имечко" required>
-    </div>
-
-    <hr align="center" size="2" width="100%">
 
     <hr align="center" size="3" color="black" width="100%">
     <hr align="center" size="3" color="black" width="100%">
     {{!--------------------------------------------------- -----------------------------------------------------}}
+    <div id="block">
+      <h2 class="keyWord"> <a name='title2'>Трудозатраты </a> </h2>
+      <div id="column">
+        <div class="row">
+          <select type="text" name="laborCost[choosed]" id="string" class="txt" tabindex="11" size="1" required>
+            <option value="none" hidden="">Выберите исполнителя </option>
+            <option value="1">p1</option>
+            <option value="2">p2</option>
+          </select>
+          <input type="number" name="laborCost[time]" id="string" class="txt" tabindex="17"
+            placeholder="Время работы, мин" required size="30">
+        </div>
 
-    <h2 class="keyWord"> Трудозатраты </h2>
-    <div>
-      <div class="row">
-        <select type="text" name="laborCost[executor]" id="string" class="txt" tabindex="11" size="1" required>
-          <option value="none" hidden="">Выберите исполнителя </option>
-          <option value="1">p1</option>
-          <option value="2">p2</option>
-        </select>
-        <input type="number" name="laborCost[time]" id="string" class="txt" tabindex="17" placeholder="Время работы, мин" required
-          size="30">
+        <hr align="center" size="2" width="100%">
+
+
+        <input name="laborCost[added]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+        <hr align="center" size="2" width="100%">
+
+
+        <h4 class="handWord"> Если помещение не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+        </h4>
+
+        <hr align="center" size="3" color="black" width="100%">
+
+
+        <div class="row">
+          <input type="text" name="laborCost[handWrite]" id="string" class="txt" tabindex="17" placeholder="Исполнитель"
+            required>
+          <input type="text" name="laborCost[timeHandWrite]" id="string" class="txt" tabindex="17"
+            placeholder="Время работы, мин" required size="30">
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+
+        <input name="laborCost[handWriteAdded]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+        <hr align="center" size="2" width="100%">
+      </div>
+    </div>
+
+
+    <hr align="center" size="3" color="black" width="100%">
+    <hr align="center" size="3" color="black" width="100%">
+    {{!------------------------------------------------------ ---------------------------------------------------------------}}
+    <div id="block">
+      <h2 class="keyWord"> <a name='title3'>Помещение </a> </h2>
+      <div id="column">
+        <div class="row">
+          <select type="text" name="premises[choosed]" id="string" class="txt" tabindex="11" size="1" required>
+            <option value="none" hidden="">Выберите Помещение </option>
+            <option value="1">p1</option>
+            <option value="2">p2</option>
+          </select>
+          <input type="number" name="premises[time]" id="string" class="txt" tabindex="17"
+            placeholder="Время работы в помещении, мин" required size="30">
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+        <input name="premises[added]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+        <hr align="center" size="2" width="100%">
+
+
+        <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+        </h4>
+
+        <hr align="center" size="3" color="black" width="100%">
+
+
+        <div class="row">
+          <input type="text" name="premises[handWrite]" id="string" class="txt" tabindex="17" placeholder="Помещение"
+            required>
+          <input type="text" name="premises[timeHandWrite]" id="string" class="txt" tabindex="17"
+            placeholder="Время работы в помещении, мин" required size="30">
+        </div>
+
+
+
+        <hr align="center" size="2" width="100%">
+
+
+        <input name="premises[handWriteAdded]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+
+        <hr align="center" size="2" width="100%">
       </div>
 
-      <hr align="center" size="2" width="100%">
 
-      <input type="submit" name="laborCost[added]"  id="string" class="txt" tabindex="17" value="+ добавить поле ">
     </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <h4 class="handWord"> Если помещение не удается найти в списке, пожалуйста, введите вручную в поля ниже:
-    </h4>
 
     <hr align="center" size="3" color="black" width="100%">
-
-
-    <div class="row">
-      <input type="text" name="laborCost[executorOutOfList]" id="string" class="txt" tabindex="17" placeholder="Исполнитель" required>
-      <input type="text" name="LaborCost[timeOutOfList]" id="string" class="txt" tabindex="17" placeholder="Время работы, мин" required
-        size="30">
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <input type="submit" name="laborCost[addOutOfList]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
-
-    <hr align="center" size="2" width="100%">
-
+    <hr align="center" size="3" color="black" width="100%">
     {{!------------------------------------------------------ ---------------------------------------------------------------}}
 
-    <h2 class="keyWord">  Помещения </h2>
-    <div>
-      <div class="row">
-        <select type="text" name="premises[inner]" id="string" class="txt" tabindex="11" size="1" required>
-          <option hidden="">Выберите Помещение </option>
-          <option value="1">p1</option>
-          <option value="2">p2</option>
-        </select>
-        <input type="number" name="premises[time]" id="string" class="txt" tabindex="17"
-          placeholder="Время работы в помещении, мин" required size="30">
+    <div id="block">
+
+      <h2 class="keyWord"> <a name='title4'>Оборудование </a> </h2>
+      <div id="column">
+        <div class="row">
+          <select type="text" name="equipment[choosed]" id="string" class="txt" tabindex="11" size="1" required>
+            <option value="none" hidden="">Выберите оборудование </option>
+            <option value="1">p1</option>
+            <option value="2">p2</option>
+          </select>
+          <input type="number" name="equipment[time]" id="string" class="txt" tabindex="17"
+            placeholder="Время работы на оборудовании, мин" required size="30">
+        </div>
+
+
+        <hr align="center" size="2" width="100%">
+
+        <input name="equipment[added]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+
+
+
+        <hr align="center" size="2" width="100%">
+
+   
+
+        <h4 class="handWord"> Если оборудование не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+        </h4>
+
+
+        <hr align="center" size="3" color="black" width="100%">
+
+
+        <div class="row">
+          <input type="text" name="equipment[handWrite]" id="string" class="txt" tabindex="17"
+            placeholder="Оборудование" required>
+          <input type="text" name="equipment[timeHandWrite]" id="string" class="txt" tabindex="17"
+            placeholder="Время работы на оборудовании, мин" required size="30">
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+        <input name="equipment[handWriteAdded]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+        <hr align="center" size="2" width="100%">
       </div>
-
-      <hr align="center" size="2" width="100%">
-
-      <input type="submit" name="premises[added]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
     </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
-    </h4>
 
     <hr align="center" size="3" color="black" width="100%">
-
-
-    <div class="row">
-      <input type="text" name="premises[handwrite]" id="string" class="txt" tabindex="17" placeholder="Помещение" required>
-      <input type="text" name="premises[handwriteTime]" id="string" class="txt" tabindex="17" placeholder="Время работы в помещении, мин"
-        required size="30">
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <input type="submit" name="name" id="string" class="txt" tabindex="17" value="+ добавить поле ">
-
-    <hr align="center" size="2" width="100%">
-
+    <hr align="center" size="3" color="black" width="100%">
     {{!------------------------------------------------------ ---------------------------------------------------------------}}
+    <div id="block">
+      <h2 class="keyWord"> <a name='title5'> Расходные Материалы </a> </h2>
+      <div id="column" class="row">
 
-    <h2 class="keyWord"> Оборудование </h2>
-    <div>
-      <div class="row">
-        <select type="text" name="equipment[choosed]" id="string" class="txt" tabindex="11" size="1" required>
-          <option value="none" hidden="">Выберите оборудование </option>
-          <option value="1">p1</option>
-          <option value="2">p2</option>
-        </select>
-        <input type="number" name="equipment[time]" id="string" class="txt" tabindex="17"
-          placeholder="Время работы на оборудовании, мин" required size="30">
+        <div>
+          <select type="text" name="materials[choosed]" id="string" class="txt" tabindex="11" size="1" required>
+            <option value="none" hidden="">Выберите Материал </option>
+            <option value="1">p1</option>
+            <option value="2">p2</option>
+          </select>
+
+          <select type="text" name="materials[using]" id="string" class="txt" tabindex="10" size="1" required>
+            <option value="none" hidden="">Кол-во использование </option>
+            <option value="1">Многоразовое</option>
+            <option value="2">Одноразовое</option>
+          </select>
+          <input type="number" name="materials[much]" id="string" class="txt" tabindex="17" placeholder="Кол-во"
+            required size="30">
+
+
+          <select type="text" name="materials[meter]" id="string" class="txt" tabindex="11" size="1" required>
+            <option value="none" hidden=""> Еденица измерения </option>
+            <option value="1">км</option>
+            <option value="2">м</option>
+          </select>
+
+
+          <hr align="center" size="2" width="100%">
+
+          <input name="materials[added]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+          <hr align="center" size="2" width="100%">
+
+          <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+          </h4>
+        </div>
+        <hr align="center" size="3" color="black" width="100%">
+
+
+        <div id="materialUp" class="row">
+          <input type="number" name="materials[handWrite]" id="string" class="txt" tabindex="17" placeholder="Материал"
+            required size="30">
+
+          <select type="text" name="materials[handWriteUsing]" id="string" class="txt" tabindex="10" size="1" required>
+            <option value="none" hidden="">Кол-во использование </option>
+            <option value="1">Многоразовое</option>
+            <option value="2">Одноразовое</option>
+          </select>
+          <input type="number" name="materials[handWriteMuch]" id="string" class="txt" tabindex="17"
+            placeholder="Кол-во" required size="30">
+
+
+          <select type="text" name="materials[handWriteMeter]" id="string" class="txt" tabindex="11" size="1" required>
+            <option value="none" hidden=""> Еденица измерения </option>
+            <option value="1">км</option>
+            <option value="2">м</option>
+          </select>
+        </div>
+
+        <hr align="center" size="2" width="100%">
+
+
+        <input name="materials[handWriteAdded]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+        <hr align="center" size="2" width="100%">
       </div>
-
-      <hr align="center" size="2" width="100%">
-
-      <input type="submit" name="equipment[added]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
     </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <h4 class="handWord"> Если оборудование не удается найти в списке, пожалуйста, введите вручную в поля ниже:
-    </h4>
-
-    <hr align="center" size="3" color="black" width="100%">
-
-
-    <div class="row">
-      <input type="text" name="equipment[handwrite]" id="string" class="txt" tabindex="17" placeholder="Оборудование" required>
-      <input type="text" name="equipment[handwriteTime]" id="string" class="txt" tabindex="17"
-        placeholder="Время работы на оборудовании, мин" required size="30">
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <input type="submit" name="equipment[handwriteAdded]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
-
-    <hr align="center" size="2" width="100%">
-
-    {{!------------------------------------------------------ ---------------------------------------------------------------}}
-
-    <h2 class="keyWord"> Расходные Материалы </h2>
-    <div id="materialUp" class="row">
-
-
-      <select type="text" name="materials[choosed]" id="string" class="txt" tabindex="11" size="1" required>
-        <option value="none" hidden="">Выберите Материал </option>
-        <option value="1">p1</option>
-        <option value="2">p2</option>
-      </select>
-
-      <select type="text" name="materials[using]" id="string" class="txt" tabindex="10" size="1" required>
-        <option value="none" hidden="">Кол-во использование </option>
-        <option value="1">Многоразовое</option>
-        <option value="2">Одноразовое</option>
-      </select>
-      <input type="number" name="materials[much]" id="string" class="txt" tabindex="17" placeholder="Кол-во" required size="30">
-
-      <select type="text" name="materials[meter]" id="string" class="txt" tabindex="11" size="1" required>
-        <option value="none" hidden=""> Еденица измерения </option>
-        <option value="1">км</option>
-        <option value="2">м</option>
-      </select>
-
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <input type="submit" name="material[handmade]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
-
-    <hr align="center" size="2" width="100%">
-
-    <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
-    </h4>
-
-    <hr align="center" size="3" color="black" width="100%">
-
-
-    <div id="materialUp" class="row">
-      <input type="number" name="material[handmade]" id="string" class="txt" tabindex="17" placeholder="Материал" required size="30">
-
-      <select type="text" name="material[handmadeUsing]" id="string" class="txt" tabindex="10" size="1" required>
-        <option value="none" hidden="">Кол-во использование </option>
-        <option value="1">Многоразовое</option>
-        <option value="2">Одноразовое</option>
-      </select>
-      <input type="number" name="material[handmadeMuch]" id="string" class="txt" tabindex="17" placeholder="Кол-во" required size="30">
-
-      <select type="text" name="material[handmadeMeter]" id="string" class="txt" tabindex="11" size="1" required>
-        <option value="none" hidden=""> Еденица измерения </option>
-        <option value="1">км</option>
-        <option value="2">м</option>
-      </select>
-    </div>
-
-    <hr align="center" size="2" width="100%">
-
-    <input type="submit" name="material[handmadeAdded]" id="string" class="txt" tabindex="17" value="+ добавить поле ">
-
-    <hr align="center" size="2" width="100%">
 
 
     {{!------------------------------------------------------ ---------------------------------------------------------------}}
-
-
+    <button>нажми</button>
   </form>
 </div>
