@@ -1,25 +1,22 @@
 /* Style the header */
 .header {
   padding: 10px 16px;
-  background: rgb(228, 217, 217);
-  color: #d86363;
+  background: rgb(80, 152, 200);
+  color: #d1d1d1;
   display: flex;
   justify-content: space-around;
 }
 
-/* Page content */
 .content {
   padding: 16px;
 }
 
-/* The sticky class is added to the header with JS when it reaches its scroll position */
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
 }
 
-/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .content {
   padding-top: 102px;
 }
@@ -27,4 +24,18 @@
 #materialUp {
   display: flex;
   justify-content: space-around;
+}
+#block {
+  display: flex;
+  justify-content: space-around;
+}
+#column {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+div {
+  background-color: rgb(191, 202, 212);
 }
