@@ -214,7 +214,7 @@
 
 
     <div class="row">
-      <input type="text" name="name" id="string" class="txt" tabindex="17" placeholder="Оборудование" required>
+      <input type="text" name="name" id="string" class="txt" tabindex="17" placeholder="Исполнитель" required>
       <input type="text" name="name" id="string" class="txt" tabindex="17" placeholder="Время работы, мин" required
         size="30">
     </div>
@@ -253,7 +253,7 @@
 
 
     <div class="row">
-      <input type="text" name="name" id="string" class="txt" tabindex="17" placeholder="Оборудование" required>
+      <input type="text" name="name" id="string" class="txt" tabindex="17" placeholder="Помещение" required>
       <input type="text" name="name" id="string" class="txt" tabindex="17" placeholder="Время работы в помещении, мин"
         required size="30">
     </div>
@@ -266,13 +266,108 @@
 
     {{!------------------------------------------------------ ---------------------------------------------------------------}}
 
+    <h2 class="keyWord"> Оборудование </h2>
+    <div>
+      <div class="row">
+        <select type="text" name="name" id="string" class="txt" tabindex="11" size="1" required>
+          <option value="none" hidden="">Выберите оборудование </option>
+          <option value="1">p1</option>
+          <option value="2">p2</option>
+        </select>
+        <input type="number" name="name" id="string" class="txt" tabindex="17"
+          placeholder="Время работы на оборудовании, мин" required size="30">
+      </div>
+
+      <hr align="center" size="2" width="100%">
+
+      <input type="submit" name="name" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <h4 class="handWord"> Если оборудование не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+    </h4>
+
+    <hr align="center" size="3" color="black" width="100%">
 
 
+    <div class="row">
+      <input type="text" name="name" id="string" class="txt" tabindex="17" placeholder="Оборудование" required>
+      <input type="text" name="name" id="string" class="txt" tabindex="17"
+        placeholder="Время работы на оборудовании, мин" required size="30">
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <input type="submit" name="name" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+    <hr align="center" size="2" width="100%">
+
+    {{!------------------------------------------------------ ---------------------------------------------------------------}}
+
+    <h2 class="keyWord"> Расходные Материалы </h2>
+    <div id="materialUp" class="row">
 
 
+      <select type="text" name="name" id="string" class="txt" tabindex="11" size="1" required>
+        <option value="none" hidden="">Выберите Материал </option>
+        <option value="1">p1</option>
+        <option value="2">p2</option>
+      </select>
 
-    {{!-- <div class="center">
-<input type="submit" id="submitbtn" name="submitbtn" tabindex="5" value="Отправить Сообщение">
-</div> --}}
+      <select type="text" name="name" id="string" class="txt" tabindex="10" size="1" required>
+        <option value="none" hidden="">Кол-во использование </option>
+        <option value="1">Многоразовое</option>
+        <option value="2">Одноразовое</option>
+      </select>
+      <input type="number" name="name" id="string" class="txt" tabindex="17" placeholder="Кол-во" required size="30">
+
+      <select type="text" name="name" id="string" class="txt" tabindex="11" size="1" required>
+        <option value="none" hidden=""> Еденица измерения </option>
+        <option value="1">км</option>
+        <option value="2">м</option>
+      </select>
+
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <input type="submit" name="name" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+    <hr align="center" size="2" width="100%">
+
+    <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+    </h4>
+
+    <hr align="center" size="3" color="black" width="100%">
+
+
+    <div id="materialUp" class="row">
+      <input type="number" name="name" id="string" class="txt" tabindex="17" placeholder="Материал" required size="30">
+
+      <select type="text" name="name" id="string" class="txt" tabindex="10" size="1" required>
+        <option value="none" hidden="">Кол-во использование </option>
+        <option value="1">Многоразовое</option>
+        <option value="2">Одноразовое</option>
+      </select>
+      <input type="number" name="name" id="string" class="txt" tabindex="17" placeholder="Кол-во" required size="30">
+
+      <select type="text" name="name" id="string" class="txt" tabindex="11" size="1" required>
+        <option value="none" hidden=""> Еденица измерения </option>
+        <option value="1">км</option>
+        <option value="2">м</option>
+      </select>
+    </div>
+
+    <hr align="center" size="2" width="100%">
+
+    <input type="submit" name="name" id="string" class="txt" tabindex="17" value="+ добавить поле ">
+
+    <hr align="center" size="2" width="100%">
+
+
+    {{!------------------------------------------------------ ---------------------------------------------------------------}}
+
+
   </form>
 </div>

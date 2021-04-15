@@ -23,3 +23,8 @@
 .sticky + .content {
   padding-top: 102px;
 }
+
+#materialUp {
+  display: flex;
+  justify-content: space-around;
+}

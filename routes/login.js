@@ -5,6 +5,16 @@ const userModel = require("../models/user");
 router.get("/", (req, res) => {
   res.redirect("/login");
 });
+
+
+router.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) return res.redirect('/')
+    res.clearCookie(req.app.get('cookieName'))
+    return res.redirect('/')
+  })
+});
+
 router.get("/allforms",async (req,res) =>{
   const entries = await entry.find()
   console.log(entries)
