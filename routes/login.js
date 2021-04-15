@@ -27,6 +27,13 @@ router.get("/:id", async (req, res) => {
   const application = await entry.find({_id:req.params.id})
   res.render("main-form",application);
 });
+router.post("/:id", async (req, res) => {
+  const application = await entry.find({_id:req.params.id})
+  application = req.body
+  application.status='sent'
+  res.render("main-form",application);
+});
+
 
 router.post("/login", async (req, res) => {
   console.log(req.body);
