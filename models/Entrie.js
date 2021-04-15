@@ -18,6 +18,7 @@ const entrySchema = new Schema({
     price:Number,
     subpodryad:Boolean,
     subpodryadOrg:String,
+    priceSubpodryad:Number,
     numberOfServices:Number,
     serviceAnalog:String,
     comment:String,
