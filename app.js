@@ -8,6 +8,7 @@ const app = express();
 const sessions = require('express-session');
 const MongoStore = require('connect-mongo');
 const loginRouter = require("./routes/login");
+const users = require('./models/user');
 
 // Сообщаем express, что в качестве шаблонизатора используется "hbs".
 app.set('view engine', 'hbs');
@@ -40,13 +41,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 // Подключаем middleware, которое позволяет читать переменные JavaScript, сохранённые в формате JSON в body HTTP-запроса.
 app.use(express.json());
-// app.use((req,res,next)=>{
-//     const userId = req.session?.user?.id
-//     if (userId || req.path === '/login') {
-//         return next()
-//     }
-//     return res.redirect('/login')
-// })
+app.use((req,res,next)=>{
+    const userId = req.session?.user?.id
+    if (userId || req.path === '/login') {
+        return next()
+    }
+    return res.redirect('/login')
+})
+app.use(async (req, res, next) => {
+  const userId = req.session?.user?.id
+  if (userId) {
+    const currentUser = await users.findById(userId)
+    if (currentUser) {
+      res.locals.name = currentUser.name
+      res.locals.email  =currentUser.email
+      res.locals.id = currentUser._id
+    }
+  }
+
+  next()
+})
 
 app.use('/', loginRouter);
 
