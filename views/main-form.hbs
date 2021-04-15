@@ -1,3 +1,5 @@
+<a name='title1'> </a>
+
 <body>
   <link rel="stylesheet" href="/css/index.css">
   <script defer src="/js/index.js"></script>
@@ -13,16 +15,13 @@
 </div>
 
 <div id="w">
-  <h1>Заявка!!!</h1>
   <form id="contactform" name="contact" method="post" action="#">
 
     <hr align="center" size="3" color="black" width="100%">
 
 
-
-
     <div id="block">
-      <h2 class="keyWord"><a name='title1'>Основное </a> </h2>
+      <h2 class="keyWord">Основное </h2>
       <div id="column">
         <div class="row">
           <label for="name"> Инициатор <span id="name" class="req">{{name}}</span></label>
@@ -87,8 +86,8 @@
           </select>
         </div>
 
-
-        <hr align="center" size="3" color="black" width="100%"> {{!--------- -------------}}
+        <hr align="center" size="2" width="100%">
+        {{!-- <hr align="center" size="3" color="black" width="100%">  --}}
 
         <div class="row">
           <label for="name"> Код услуги <span class="req"></span></label>
@@ -222,8 +221,7 @@
 
           <hr align="center" size="2" width="100%">
 
-
-          <input id="stringAdd" class="txt" tabindex="17" value="+ добавить поле ">
+          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
         </div>
         <hr align="center" size="2" width="100%" class="height">
 
@@ -231,7 +229,7 @@
         <h4 class="handWord"> Если помещение не удается найти в списке, пожалуйста, введите вручную в поля ниже:
         </h4>
 
-        <hr align="center" size="3" color="black" width="100%">
+        {{!-- <hr align="center" size="3" color="black" width="100%"> --}}
 
         <div>
           <div class="row">
@@ -243,8 +241,7 @@
 
           <hr align="center" size="2" width="100%">
 
-
-          <input id="stringAdd" class="txt" tabindex="17" value="+ добавить поле ">
+          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
         </div>
         <hr align="center" size="2" width="100%" class="height">
       </div>
@@ -253,7 +250,8 @@
 
     <hr align="center" size="3" color="black" width="100%">
     <hr align="center" size="3" color="black" width="100%">
-    {{!------------------------------------------------------ ---------------------------------------------------------------}}
+    {{!------------------------------------------------------
+    ---------------------------------------------------------------}}
     <div id="block">
       <h2 class="keyWord"> <a name='title3'>Помещение </a> </h2>
       <div id="column">
@@ -270,7 +268,7 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="txt" tabindex="17" value="+ добавить поле ">
+          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
         </div>
         <hr align="center" size="2" width="100%" class="height">
 
@@ -278,7 +276,7 @@
         <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
         </h4>
 
-        <hr align="center" size="3" color="black" width="100%">
+        {{!-- <hr align="center" size="3" color="black" width="100%"> --}}
 
         <div>
           <div class="row">
@@ -290,7 +288,7 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="txt" tabindex="17" value="+ добавить поле ">
+          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
         </div>
         <hr align="center" size="2" width="100%" class="height">
       </div>
@@ -299,7 +297,8 @@
 
     <hr align="center" size="3" color="black" width="100%">
     <hr align="center" size="3" color="black" width="100%">
-    {{!------------------------------------------------------ ---------------------------------------------------------------}}
+    {{!------------------------------------------------------
+    ---------------------------------------------------------------}}
 
     <div id="block">
 
@@ -319,7 +318,7 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="txt" tabindex="17" value="+ добавить поле ">
+          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
         </div>
 
 
@@ -332,7 +331,7 @@
         </h4>
 
 
-        <hr align="center" size="3" color="black" width="100%">
+        {{!-- <hr align="center" size="3" color="black" width="100%"> --}}
 
         <div>
           <div class="row">
@@ -344,7 +343,7 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="txt" tabindex="17" value="+ добавить поле ">
+          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
         </div>
         <hr align="center" size="2" width="100%" class="height">
       </div>
@@ -352,7 +351,8 @@
 
     <hr align="center" size="3" color="black" width="100%">
     <hr align="center" size="3" color="black" width="100%">
-    {{!------------------------------------------------------ ---------------------------------------------------------------}}
+    {{!------------------------------------------------------
+    ---------------------------------------------------------------}}
     <div id="block">
       <h2 class="keyWord"> <a name='title5'> Расходные Материалы </a> </h2>
       <div id="column">
@@ -383,48 +383,50 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="txt" tabindex="17" value="+ добавить поле ">
-        </div>
+          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
 
-        <hr align="center" size="2" width="100%" class="height">
+          <hr align="center" size="2" width="100%" class="height">
 
-        <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
-        </h4>
-        <hr align="center" size="3" color="black" width="100%">
+          <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+          </h4>
 
-        <div>
-          <div id="materialUp" class="row">
-            <input type="number" name="materials[handWrite]" id="string" class="txt" tabindex="17"
-              placeholder="Материал" required size="30">
+          {{!-- <hr align="center" size="3" color="black" width="100%"> --}}
 
-            <select type="text" name="materials[handWriteUsing]" id="string" class="txt" tabindex="10" size="1"
-              required>
-              <option value="none" hidden="">Кол-во использование </option>
-              <option value="1">Многоразовое</option>
-              <option value="2">Одноразовое</option>
-            </select>
-            <input type="number" name="materials[handWriteMuch]" id="string" class="txt" tabindex="17"
-              placeholder="Кол-во" required size="30">
+          <div>
+            <div id="materialUp" class="row">
+              <input type="text" name="materials[handWrite]" id="string" class="txt" tabindex="17"
+                placeholder="Материал" required size="30">
+
+              <select type="text" name="materials[handWriteUsing]" id="string" class="txt" tabindex="10" size="1"
+                required>
+                <option value="none" hidden="">Кол-во использование </option>
+                <option value="1">Многоразовое</option>
+                <option value="2">Одноразовое</option>
+              </select>
+              <input type="number" name="materials[handWriteMuch]" id="string" class="txt" tabindex="17"
+                placeholder="Кол-во" required size="30">
 
 
-            <select type="text" name="materials[handWriteMeter]" id="string" class="txt" tabindex="11" size="1"
-              required>
-              <option value="none" hidden=""> Еденица измерения </option>
-              <option value="1">км</option>
-              <option value="2">м</option>
-            </select>
+              <select type="text" name="materials[handWriteMeter]" id="string" class="txt" tabindex="11" size="1"
+                required>
+                <option value="none" hidden=""> Еденица измерения </option>
+                <option value="1">км</option>
+                <option value="2">м</option>
+              </select>
+            </div>
+
+            <hr align="center" size="2" width="100%">
+
+
+            <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
           </div>
-
-          <hr align="center" size="2" width="100%">
-
-
-          <input id="stringAdd" class="txt" tabindex="17" value="+ добавить поле ">
+          <hr align="center" size="2" width="100%" class="height">
         </div>
-        <hr align="center" size="2" width="100%" class="height">
       </div>
     </div>
-    <button class="sliding-button ">Отправить заявку!</button>
+    <button class="gradient-button">Отправить заявку!</button>
 
-    {{!------------------------------------------------------ ---------------------------------------------------------------}}
+    {{!------------------------------------------------------
+      ---------------------------------------------------------------}}
   </form>
 </div>

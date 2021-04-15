@@ -7,7 +7,7 @@ a {
 }
 .head:hover {
   padding: 10px 10px 10px 10px;
-  background: linear-gradient(180deg, #977f7a, #ad7a79, #9e7384, #d50082);
+  background: linear-gradient(to right, #ecdede 0%, #dfdfdf 51%, #e6e0e0 100%);
 }
 
 /* Style the header */
@@ -17,6 +17,7 @@ a {
   color: #d1d1d1;
   display: flex;
   justify-content: space-around;
+  z-index: 1000;
 }
 
 .content {
@@ -36,7 +37,9 @@ a {
 #name {
   font-weight: bold;
 }
-
+#contactform {
+  position: relative;
+}
 #materialUp {
   display: flex;
   justify-content: space-around;
@@ -63,6 +66,7 @@ div {
 }
 .keyWord {
   /* text-align: left; */
+  width: 10%;
   padding-top: 30px;
 }
 .handWord {
@@ -71,42 +75,75 @@ div {
 .height {
   margin-bottom: 50px;
 }
+.req {
+  font-size: 110%;
+}
 
 /* кнопочка */
 
-.sliding-button {
+/* body {
+  background: #d6eaf8;
+} */
+.gradient-button {
   text-decoration: none;
-  color: rgb(129, 117, 117);
   display: inline-block;
-  position: relative;
-  padding: 15px 30px;
-  border: 1px solid;
-  border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
-  border-image-slice: 1;
+  color: rgb(0, 0, 0);
+  padding: 20px 30px;
   margin: 10px 20px;
+  border-radius: 10px;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  overflow: hidden;
   letter-spacing: 2px;
-  transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-image: linear-gradient(
+    to right,
+    #ecdede 0%,
+    #dfdfdf 51%,
+    #e6e0e0 100%
+  );
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
 }
-.sliding-button:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  z-index: -1;
-  color: white;
-  background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
-  transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+.gradient-button:hover {
+  background-position: right center;
 }
-.sliding-button:hover {
-  background: rgba(255, 255, 255, 0);
+/* обычные поля */
+#string {
+  text-decoration: none;
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  padding: 10px 10px;
+  width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    to right,
+    #ecdede 0%,
+    #dfdfdf 51%,
+    #e6e0e0 100%
+  );
+  background-size: 100% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-.sliding-button:hover:before {
-  bottom: 0%;
-  top: auto;
-  height: 100%;
+/* кнопочки добавления  */
+.addplus {
+  text-decoration: none;
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  padding: 10px 10px;
+  width: 200px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    to right,
+    #ecdede 0%,
+    #dfdfdf 51%,
+    #e6e0e0 100%
+  );
+  background-size: 100% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
 }
