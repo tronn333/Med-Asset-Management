@@ -89,7 +89,7 @@
         <div class="row" id="anestesia" style="display: none;">
           <label for="message"> Вид анестезии <span class="req">*</span></label>
           <select type="text" name="anestasiaType" id="string" class="txt" required value='{{anestesiaType}}'
-            tabindex="5" size="1">
+            tabindex="5" size="1" style="width: 313px;">
             <option value="none" hidden="">{{#if anestasiaType}} '{{anestasiaType}}' {{else}} Выберите тип{{/if}}
             </option>
 
@@ -322,7 +322,7 @@
       <div class="row">
         <input type="text" name="premises[handWrite]" style="width: 400px;" value='{{premises.handWrite}}' id="string"
           class="txt4" tabindex="17" placeholder="Помещение">
-        <input type="text" name="premises[timeHandWrite]" style="width: 396px;" value='{{premises.timeHandWrite}}'
+        <input type="number" name="premises[timeHandWrite]" style="width: 396px;" value='{{premises.timeHandWrite}}'
           id="string" class="tx4" tabindex="17" placeholder="Время работы в помещении, мин" size="30">
       </div>
 
@@ -380,7 +380,7 @@
       <div class="row">
         <input type="text" name="equipment[handWrite]" style="width: 400px;" id="string" value='{{equipment.handWrite}}'
           class="txt1" tabindex="17" placeholder="Оборудование">
-        <input type="text" name="equipment[timeHandWrite]" style="width: 400px;" value='{{equipment.timeHandWrite}}'
+        <input type="number" name="equipment[timeHandWrite]" style="width: 400px;" value='{{equipment.timeHandWrite}}'
           id="string" class="txt4" tabindex="17" placeholder="Время работы на оборудовании, мин" size="30">
       </div>
 
@@ -405,7 +405,7 @@
         <select type="text" name="materials[choosed]" value='{{materials.choosed}}' id="string" class="txt2"
           tabindex="11" size="1" required>
           <option value="none" hidden="">{{#if materials.choosed}} '{{materials.choosed}}' {{else}} Выберите
-            Помещение{{/if}}</option>
+            Материал{{/if}}</option>
           <option value="1">p1</option>
           <option value="2">p2</option>
         </select>
