@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="css/allforms.css">
-
-
+<h2><a class="head" href="/homepage" style="color: black;">Домой </a> </h2>
+<h2>Your departement is {{department}}</h2>
 <ul class="list3b">
   {{#each entries}}
-  <li><a href='entry/{{this._id}}'>{{this._id}}</a></li>
+  <li><a href='entry/{{this._id}}'>{{this._id}}</a> <p>Initiator {{this.initiator.name}}</p></li>
   {{/each}}
 </ul>
