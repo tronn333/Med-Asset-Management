@@ -109,6 +109,11 @@ router.post("/updateentry/:id", async (req,res) =>{
       }
     }
   }
+  let comment = await Comment.create({
+    user: req.body.initiator,
+    entrie: req.params.id,
+    comment: req.body.comment
+  });
   res.redirect("/homepage");
 })
 
