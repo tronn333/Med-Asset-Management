@@ -15,7 +15,7 @@ router.get('/logout', (req, res) => {
 });
 router.get('/yourforms', async (req, res) => {
   const entries = await entry.find({ currentdepartment: `${req.session.user.department}` })
-  console.log(entries)
+  // console.log(entries)
   res.render('allforms', { entries })
 })
 
@@ -34,7 +34,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 router.post("/login", async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { email, password } = req.body;
   if (email && password) {
     const currUser = await userModel.findOne({ email });
@@ -66,7 +66,7 @@ router.post("/entry/:id", async (req, res) => {
     if (req.body[item] == 'none' || req.body[item] == '') {
       delete req.body[item]
     }
-    console.log(typeof req.body[item]);
+    // console.log(typeof req.body[item]);
     if (typeof req.body[item] === 'object'){
       for (const key in req.body[item])
       {
