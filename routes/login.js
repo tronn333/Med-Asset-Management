@@ -56,19 +56,13 @@ router.get("/homepage", (req, res) => {
   res.render("homepage");
 });
 router.get("/entry/:id", async (req, res) => {
-<<<<<<< HEAD
-  const application = await entry.find({ _id: req.params.id })
-  res.locals.idEntry = req.params.id
-  res.render("main-form", application);
-=======
   let application = await entry.find({ _id: req.params.id })
-  console.log(application);
-  if (application.length === 0){
-    application.push(new entry({_id: req.params.id}))
+  res.locals.idEntry = req.params.id
+  if (application.length === 0) {
+    application.push(new entry({ _id: req.params.id }))
   }
   console.log(application);
-  res.render("main-form",{application});
->>>>>>> dfe9a157000a47ee359a6787e0b581c210bc3b4e
+  res.render("main-form", { application });
 });
 
 router.post("/entry/:id", async (req, res) => {
