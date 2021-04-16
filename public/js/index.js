@@ -40,7 +40,7 @@ form.addEventListener("click", (e) => {
     let arr = [...clone.children];
     for (let i = 0; i < arr.length; i++) {
       let theName = arr[i].getAttribute('name');
-      arr[i].value = " "
+      arr[i].value = ""
       arr[i].setAttribute('name', theName + counter);
     }
     counter += 1;
