@@ -34,7 +34,7 @@
           <label for="email"> Медицинский центр<span class="req">*</span></label>
           <select type="text" name="medcenter" id="string" class="txt" tabindex="2" value='{{this.medcenter}}' required
             size="1">
-            <option value="none" hidden="">{{#if medcenter}} '{{medcenter}}' {{else}} Выберите тип{{/if}}</option>
+            <option {{#if medcenter}} value='{{medcenter}}' {{else}} value="none" {{/if}} hidden="">{{#if medcenter}} '{{medcenter}}' {{else}} Выберите тип{{/if}}</option>
             <option value="1">p1</option>
             <option value="2">p2</option>
           </select>
@@ -46,7 +46,7 @@
           <label for="subject"> Подразделение <span class="req">*</span></label>
           <select type="text" name="division" id="string" class="txt" value='{{this.division}}' required tabindex="3"
             size="1">
-            <option value="none" hidden="">{{#if this.division}} '{{this.division}}' {{else}} Выберите тип{{/if}}</option>
+            <option {{#if this.division}} value='{{this.division}}' {{else}}value="none"{{/if}}  hidden="">{{#if this.division}} '{{this.division}}' {{else}} Выберите тип{{/if}}</option>
             <option value="1">p1</option>
             <option value="2">p2</option>
           </select>
@@ -60,7 +60,7 @@
           <label for="message"> Специализация <span class="req">*</span></label>
           <select type="text" name="specialisation" id="string" class="txt" required value='{{this.specialisation}}'
             tabindex="4" size="1">
-            <option value="none" hidden="">{{#if this.specialisation}} '{{this.specialisation}}' {{else}} Выберите тип{{/if}}</option>
+            <option {{#if this.specialisation}} value='{{this.specialisation}}' {{else}} value="none"{{/if}}value="none" hidden="">{{#if this.specialisation}} '{{this.specialisation}}' {{else}} Выберите тип{{/if}}</option>
             <option value="1">p1</option>
             <option value="2">p2</option>
           </select>
@@ -74,7 +74,7 @@
 
           <select type="text" name="anestasia" id="string" class="txt" required value='{{anestasia}}' tabindex="5"
             size="1">
-            <option value="none" hidden="">{{#if this.anestasia}} '{{this.anestasia}}' {{else}} Выберите тип{{/if}}</option>
+            <option {{#if this.anestasia}} value='{{this.anestasia}}' {{else}} value="none"{{/if}}value="none" hidden="">{{#if this.anestasia}} '{{this.anestasia}}' {{else}} Выберите тип{{/if}}</option>
             <option value="1">Да</option>
             <option value="2">Нет</option>
           </select>
@@ -87,7 +87,7 @@
           <label for="message"> Вид анестезии <span class="req">*</span></label>
           <select type="text" name="anestasiaType" id="string" class="txt" required value='{{anestesiaType}}'
             tabindex="5" size="1">
-            <option value="none" hidden="">{{#if anestasiaType}} '{{anestasiaType}}' {{else}} Выберите тип{{/if}}
+            <option {{#if anestasiaType}} value='{{anestasiaType}}' {{else}}value="none"{{/if}}value="none" hidden="">{{#if anestasiaType}} '{{anestasiaType}}' {{else}} Выберите тип{{/if}}
             </option>
 
             <option value="1">p1</option>
@@ -143,7 +143,7 @@
         <div class="row">
           <label for="message"> Субподряд <span class="req">*</span></label>
           <select type="text" name="subpodryad" id="string" required class="txt" tabindex="10" size="1">
-            <option value="none" hidden="">{{#if subpodryad}} '{{subpodryad}}' {{else}} Выберите тип{{/if}}</option>
+            <option {{#if subpodryad}} value='{{subpodryad}}' {{else}}value="none"{{/if}} hidden="">{{#if subpodryad}} '{{subpodryad}}' {{else}} Выберите тип{{/if}}</option>
             <option value="1">Да</option>
             <option value="2">Нет</option>
           </select>
@@ -292,7 +292,7 @@
           <div class="row">
             <select type="text" name="premises[choosed]" value='{{premises.choosed}}' id="string" class="txt"
               tabindex="11" size="1">
-              <option value="none" hidden="">{{#if premises.choosed}} '{{premises.choosed}}' {{else}} Выберите
+              <option {{#if premises.choosed}} value='{{premises.choosed}}' {{else}}value="none"{{/if}}value="none" hidden="">{{#if premises.choosed}} '{{premises.choosed}}' {{else}} Выберите
                 Помещение{{/if}}</option>
               <option value="1">p1</option>
               <option value="2">p2</option>
