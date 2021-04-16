@@ -69,3 +69,19 @@ subpodryad.addEventListener(
   },
   false
 );
+
+const deleteB = document.querySelector("#delete");
+
+
+deleteB.addEventListener("click", (e) => {
+  // const dataId= e.target.getAttribute("data-id");
+  // console.log(dataId);
+  const id = e.target.dataset.id;
+  console.log(id);
+  const response = await fetch(`/entries/${id}`, {
+    method: 'DELETE'
+  });
+  const serRespNew = await response.json();
+  console.log(serRespNew);
+  if (serRespNew.isDeleteSuccessful) alert("delete oK")
+})

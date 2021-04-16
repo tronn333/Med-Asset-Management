@@ -94,8 +94,8 @@ router.post("/entry/:id", async (req, res) => {
   });
   res.redirect("/homepage");
 });
-router.post("/updateentry/:id", async (req,res) =>{
-  const application = await entry.findOneAndUpdate({_id:req.params.id},req.body)
+router.post("/updateentry/:id", async (req, res) => {
+  const application = await entry.findOneAndUpdate({ _id: req.params.id }, req.body)
   for (const item in req.body) {
     if (req.body[item] == 'none' || req.body[item] == '') {
       delete req.body[item]
@@ -125,5 +125,10 @@ router.get("/entry/:id/history", async (req, res) => {
   res.render("history", { entrys });
 });
 
+router.delete('/entry/:id', async (req, res) => {
+  console.log(req.params.id);
+  await entry.findByIdAndDelete(req.params.id);
+  return res.json({ isDeleteSuccessful: true });
+});
 
 module.exports = router;
