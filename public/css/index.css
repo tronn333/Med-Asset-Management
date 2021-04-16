@@ -49,13 +49,16 @@ a {
   /* justify-content: space-around; */
   font-size: 90%;
 }
-#column {
-  text-align: center;
+.column {
+  /* text-align: center; */
+  align-items: stretch;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   padding: 10px 10px 10px 10px;
   text-align: justify;
   padding-right: 20px;
+  order: unset;
 }
 
 div {
@@ -105,13 +108,15 @@ div {
 .gradient-button:hover {
   background-position: right center;
 }
+/* .txt4 {
+  padding-right: 50px;
+} */
 /* обычные поля */
 #string {
   text-decoration: none;
   display: inline-block;
   color: rgb(0, 0, 0);
   padding: 15px 10px;
-  width: 200px;
   text-transform: uppercase;
   letter-spacing: 2px;
   background-image: linear-gradient(
@@ -123,7 +128,7 @@ div {
   background-size: 100% auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 
-  width: 220px;
+  width: 290px;
 }
 textarea {
   border-style: inset;
@@ -158,17 +163,20 @@ label {
   display: flex;
   justify-content: space-between;
 }
-.txt1 {
+/* .txt1 {
+  width: 400px;
 }
+.txt2 {
+  width: 400px;
+} */
+
 .indent {
   margin-bottom: 200px;
 }
-/* .row1 {
-  display: flex;
-  justify-content: space-between;
-} */
 
 #finalBut {
   display: flex;
   justify-content: center;
+  height: 100px;
+  padding-bottom: 40px;
 }
