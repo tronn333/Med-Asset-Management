@@ -261,11 +261,11 @@
       <hr align="center" size="2" width="100%" class="height">
 
 
-      <h4 class="handWord"> Если помещение не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+      <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
       </h4>
 
       {{!--
-        <hr align="center" size="3" color="black" width="100%"> --}}
+      <hr align="center" size="3" color="black" width="100%"> --}}
 
       <div>
         <div class="row">
@@ -287,7 +287,7 @@
 <hr align="center" size="3" color="black" width="100%" class="indent">
 <hr align="center" size="3" color="black" width="100%">
 {{!------------------------------------------------------
-    ---------------------------------------------------------------}}
+---------------------------------------------------------------}}
 <div id="block">
   <h2 class="keyWord">Помещение </h2>
   <div class="column">
@@ -312,11 +312,11 @@
     <hr align="center" size="2" width="100%" class="height">
 
 
-    <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+    <h4 class="handWord"> Если помещение не удается найти в списке, пожалуйста, введите вручную в поля ниже:
     </h4>
 
     {{!--
-        <hr align="center" size="3" color="black" width="100%"> --}}
+    <hr align="center" size="3" color="black" width="100%"> --}}
 
     <div>
       <div class="row">
@@ -338,7 +338,7 @@
 <hr align="center" size="3" color="black" width="100%" class="indent">
 <hr align="center" size="3" color="black" width="100%">
 {{!------------------------------------------------------
-    ---------------------------------------------------------------}}
+---------------------------------------------------------------}}
 
 <div id="block">
 
@@ -374,7 +374,7 @@
 
 
     {{!--
-        <hr align="center" size="3" color="black" width="100%"> --}}
+    <hr align="center" size="3" color="black" width="100%"> --}}
 
     <div>
       <div class="row">
@@ -395,7 +395,7 @@
 <hr align="center" size="3" color="black" width="100%" class="indent">
 <hr align="center" size="3" color="black" width="100%">
 {{!------------------------------------------------------
-    ---------------------------------------------------------------}}
+---------------------------------------------------------------}}
 <div id="block">
   <h2 class="keyWord">Расходные Материалы </h2>
   <div class="column">
@@ -403,26 +403,26 @@
     <div>
       <div id="materialUp" class="row1">
         <select type="text" name="materials[choosed]" value='{{materials.choosed}}' id="string" class="txt2"
-          tabindex="11" size="1" required>
-          <option value="none" hidden="">{{#if materials.choosed}} '{{materials.choosed}}' {{else}} Выберите
-            Материал{{/if}}</option>
+          tabindex="11" size="1">
+          <option value="none" hidden="">{{#if materials.choosed}} '{{materials.choosed}}' {{else}}Материал{{/if}}
+          </option>
           <option value="1">p1</option>
           <option value="2">p2</option>
         </select>
 
         <select type="text" name="materials[using]" id="string" value='{{materials.using}}' class="txt2" tabindex="10"
-          size="1" required>
+          size="1">
           <option value="none" hidden="">{{#if materials.using}} '{{materials.using}}' {{else}}Кол-во
             использование{{/if}}</option>
           <option value="1">Многоразовое</option>
           <option value="2">Одноразовое</option>
         </select>
         <input type="number" name="materials[much]" id="string" class="txt2" value='{{this.materials.much}}'
-          tabindex="17" placeholder="Кол-во" required size="30">
+          tabindex="17" placeholder="Кол-во" size="30">
 
 
         <select type="text" name="materials[meter]" value='{{this.materials.meter}}' id="string" class="txt2"
-          tabindex="11" size="1" required>
+          tabindex="11" size="1">
           <option value="none" hidden=""> {{#if materials.meter}} '{{materials.meter}}' {{else}}Единица{{/if}}
           </option>
           <option value="1">км</option>
@@ -436,11 +436,11 @@
 
       <hr align="center" size="2" width="100%" class="height">
 
-      <h4 class="handWord"> Если исполнителя не удается найти в списке, пожалуйста, введите вручную в поля ниже:
+      <h4 class="handWord"> Если расходные материалы не удается найти в списке, пожалуйста, введите вручную в поля ниже:
       </h4>
 
       {{!--
-          <hr align="center" size="3" color="black" width="100%"> --}}
+      <hr align="center" size="3" color="black" width="100%"> --}}
 
       <div>
         <div id="materialUp" class="row1">
@@ -484,6 +484,7 @@
   </select>
   {{#if status}}
   <button class="gradient-button ">Редактировать!</button>
+  <button class="gradient-button ">Удалить</button>
   {{else}}
   <button class="gradient-button ">Отправить заявку!</button>
   {{/if}}
@@ -496,6 +497,6 @@
 {{/each}}
 
 {{!------------------------------------------------------
-    ---------------------------------------------------------------}}
+---------------------------------------------------------------}}
 </form>
 </div>
