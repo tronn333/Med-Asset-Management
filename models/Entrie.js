@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose')
+const {Schema, model} = require('mongoose') //schema for bd of form
 const entrySchema = new Schema({
     initiator:{
         type: Schema.Types.ObjectId,
