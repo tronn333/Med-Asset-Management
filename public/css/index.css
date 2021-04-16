@@ -46,28 +46,30 @@ a {
 }
 #block {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   font-size: 90%;
 }
 #column {
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   padding: 10px 10px 10px 10px;
-  width: 700px;
+  text-align: justify;
+  padding-right: 20px;
 }
 
 div {
-  background-color: rgb(191, 202, 212);
+  /* background-color: rgb(191, 202, 212); */
+  background: linear-gradient(to right, #ecdede 0%, #dfdfdf 51%, #e6e0e0 100%);
 }
 .button {
   align-items: center;
 }
 .keyWord {
-  /* text-align: left; */
-  width: 10%;
+  text-align: left;
+  width: 15%;
   padding-top: 30px;
+  padding-left: 20px;
 }
 .handWord {
   color: rgb(139, 41, 41);
@@ -77,13 +79,11 @@ div {
 }
 .req {
   font-size: 110%;
+  padding-right: 100px;
 }
 
 /* кнопочка */
 
-/* body {
-  background: #d6eaf8;
-} */
 .gradient-button {
   text-decoration: none;
   display: inline-block;
@@ -91,7 +91,7 @@ div {
   padding: 20px 30px;
   margin: 10px 20px;
   border-radius: 10px;
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
   text-transform: uppercase;
   letter-spacing: 2px;
   background-image: linear-gradient(
@@ -118,12 +118,14 @@ div {
   letter-spacing: 2px;
   background-image: linear-gradient(
     to right,
-    #ecdede 0%,
+    #9c9a9a 0%,
     #dfdfdf 51%,
-    #e6e0e0 100%
+    #beb8b8 100%
   );
   background-size: 100% auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+  width: 220px;
 }
 /* кнопочки добавления  */
 .addplus {
@@ -133,8 +135,8 @@ div {
   padding: 10px 10px;
   width: 200px;
   margin: 10px 20px;
-  border-radius: 10px;
-  font-family: "Montserrat", sans-serif;
+  /* border-radius: 10px; */
+  /* font-family: "Montserrat", sans-serif; */
   text-transform: uppercase;
   letter-spacing: 2px;
   background-image: linear-gradient(
@@ -147,3 +149,12 @@ div {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   transition: 0.5s;
 }
+
+label {
+  padding-right: 200px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+/* надо менять класс row  */
