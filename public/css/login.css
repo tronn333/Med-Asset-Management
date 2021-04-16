@@ -6,16 +6,33 @@
 a {
   text-decoration: none;
 }
-.column {
-  padding: 10px 16px;
-  background: rgb(255, 255, 255);
-  color: #d1d1d1;
-  display: flex;
-  justify-content: center;
-  z-index: 1000;
+.gradient-button {
   text-decoration: none;
+  display: inline-block;
   color: rgb(0, 0, 0);
-  padding: 10px 10px;
+  padding: 20px 30px;
+  margin: 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    to right,
+    #ecdede 0%,
+    #dfdfdf 51%,
+    #e6e0e0 100%
+  );
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+}
+.gradient-button:hover {
+  background-position: right center;
+}
+
+#string {
+  text-decoration: none;
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  padding: 15px 10px;
   width: 200px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -27,45 +44,12 @@ a {
   );
   background-size: 100% auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  width: 220px;
-}
-#block {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 40px;
-}
 
-#logout {
-  text-decoration: none;
-  padding: 10px 16px;
-  background: rgb(255, 255, 255);
-  color: #d1d1d1;
-  /* display: flex;
-  justify-content: center; */
-  z-index: 1000;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  height: 20px;
-  width: 100px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background-image: linear-gradient(
-    to right,
-    #9c9a9a 0%,
-    #dfdfdf 51%,
-    #beb8b8 100%
-  );
-  background-size: 100% auto;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   width: 220px;
 }
 
-#head {
+#form {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   flex-direction: column;
-  padding-top: 10px;
-}
-h3 {
-  letter-spacing: 2px;
 }
