@@ -59,7 +59,6 @@ a {
 }
 
 div {
-  /* background-color: rgb(191, 202, 212); */
   background: linear-gradient(to right, #ecdede 0%, #dfdfdf 51%, #e6e0e0 100%);
 }
 .button {
@@ -78,8 +77,9 @@ div {
   margin-bottom: 50px;
 }
 .req {
-  font-size: 110%;
-  padding-right: 100px;
+  font-size: 150%;
+  font-weight: bolder;
+  padding-right: 200px;
 }
 
 /* кнопочка */
@@ -90,8 +90,6 @@ div {
   color: rgb(0, 0, 0);
   padding: 20px 30px;
   margin: 10px 20px;
-  border-radius: 10px;
-  /* font-family: "Montserrat", sans-serif; */
   text-transform: uppercase;
   letter-spacing: 2px;
   background-image: linear-gradient(
@@ -112,7 +110,7 @@ div {
   text-decoration: none;
   display: inline-block;
   color: rgb(0, 0, 0);
-  padding: 10px 10px;
+  padding: 15px 10px;
   width: 200px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -127,6 +125,10 @@ div {
 
   width: 220px;
 }
+textarea {
+  border-style: inset;
+  border-color: rgb(0, 0, 0);
+}
 /* кнопочки добавления  */
 .addplus {
   text-decoration: none;
@@ -134,8 +136,7 @@ div {
   color: rgb(0, 0, 0);
   padding: 10px 10px;
   width: 200px;
-  margin: 10px 20px;
-  /* border-radius: 10px; */
+  /* margin: 10px 20px; */
   /* font-family: "Montserrat", sans-serif; */
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -157,4 +158,17 @@ label {
   display: flex;
   justify-content: space-between;
 }
-/* надо менять класс row  */
+.txt1 {
+}
+.indent {
+  margin-bottom: 200px;
+}
+/* .row1 {
+  display: flex;
+  justify-content: space-between;
+} */
+
+#finalBut {
+  display: flex;
+  justify-content: center;
+}

@@ -195,7 +195,8 @@
 
         <div class="row">
           <label for="name"> Комментарии <span class="req"></span></label>
-          <input type="text" name="comment" id="string" class="txt" tabindex="15" placeholder="Комментарии">
+          <textarea type="text" name="comment" id="string" class="txt" tabindex="15"
+            placeholder="Комментарии"></textarea>
         </div>
 
         <hr align="center" size="2" width="100%">
@@ -210,17 +211,17 @@
         <hr align="center" size="2" width="100%">
       </div>
 
-    </div>
+    </div><a name='title2'> </a>
 
-    <hr align="center" size="3" color="black" width="100%">
+    <hr align="center" size="3" color="black" width="100%" class="indent">
     <hr align="center" size="3" color="black" width="100%">
     {{!--------------------------------------------------- -----------------------------------------------------}}
     <div id="block">
-      <h2 class="keyWord"> <a name='title2'>Трудозатраты </a> </h2>
+      <h2 class="keyWord"> Трудозатраты </h2>
       <div id="column">
         <div>
           <div class="row">
-            <select type="text" name="laborCost[choosed]" value='{{this.laborCost.choosed}}' id="string" class="txt"
+            <select type="text" name="laborCost[choosed]" value='{{this.laborCost.choosed}}' id="string" class="txt1"
               tabindex="11" size="1">
               <option value="none" hidden="">Выберите исполнителя </option>
               <option value="1">p1</option>
@@ -232,7 +233,7 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
+          <button id="stringAdd" class="addplus" tabindex="17"> + Добавить поле</button>
         </div>
         <hr align="center" size="2" width="100%" class="height">
 
@@ -245,7 +246,7 @@
 
         <div>
           <div class="row">
-            <input type="text" name="laborCost[handWrite]" value='{{laborCost.handWrite}}' id="string" class="txt"
+            <input type="text" name="laborCost[handWrite]" value='{{laborCost.handWrite}}' id="string" class="txt1"
               tabindex="17" placeholder="Исполнитель">
             <input type="text" name="laborCost[timeHandWrite]" value='{{laborCost.timeHandWrite}}' id="string"
               class="txt" tabindex="17" placeholder="Время работы, мин" size="30">
@@ -253,23 +254,23 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
+          <button id="stringAdd" class="addplus" tabindex="17">+ Добавить поле</button>
         </div>
         <hr align="center" size="2" width="100%" class="height">
       </div>
-    </div>
+    </div><a name='title3'>Помещение </a>
 
 
-    <hr align="center" size="3" color="black" width="100%">
+    <hr align="center" size="3" color="black" width="100%" class="indent">
     <hr align="center" size="3" color="black" width="100%">
     {{!------------------------------------------------------
     ---------------------------------------------------------------}}
     <div id="block">
-      <h2 class="keyWord"> <a name='title3'>Помещение </a> </h2>
+      <h2 class="keyWord">Помещение </h2>
       <div id="column">
         <div>
           <div class="row">
-            <select type="text" name="premises[choosed]" value='{{premises.choosed}}' id="string" class="txt"
+            <select type="text" name="premises[choosed]" value='{{premises.choosed}}' id="string" class="txt1"
               tabindex="11" size="1">
               <option value="none" hidden="">Выберите Помещение </option>
               <option value="1">p1</option>
@@ -281,7 +282,7 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
+          <button id="stringAdd" class="addplus" tabindex="17">+ Добавить поле </button>
         </div>
         <hr align="center" size="2" width="100%" class="height">
 
@@ -294,7 +295,7 @@
 
         <div>
           <div class="row">
-            <input type="text" name="premises[handWrite]" value='{{premises.handWrite}}' id="string" class="txt"
+            <input type="text" name="premises[handWrite]" value='{{premises.handWrite}}' id="string" class="txt1"
               tabindex="17" placeholder="Помещение">
             <input type="text" name="premises[timeHandWrite]" value='{{premises.timeHandWrite}}' id="string" class="txt"
               tabindex="17" placeholder="Время работы в помещении, мин" size="30">
@@ -302,25 +303,25 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
+          <button id="stringAdd" class="addplus" tabindex="17">+ Добавить поле </button>
         </div>
         <hr align="center" size="2" width="100%" class="height">
       </div>
 
-    </div>
+    </div><a name='title4'> </a>
 
-    <hr align="center" size="3" color="black" width="100%">
+    <hr align="center" size="3" color="black" width="100%" class="indent">
     <hr align="center" size="3" color="black" width="100%">
     {{!------------------------------------------------------
     ---------------------------------------------------------------}}
 
     <div id="block">
 
-      <h2 class="keyWord"> <a name='title4'>Оборудование </a> </h2>
+      <h2 class="keyWord"> Оборудование </h2>
       <div id="column">
         <div>
           <div class="row">
-            <select type="text" name="equipment[choosed]" value='{{equipmentchoosed}}' id="string" class="txt"
+            <select type="text" name="equipment[choosed]" value='{{equipmentchoosed}}' id="string" class="txt1"
               tabindex="11" size="1">
               <option value="none" hidden="">Выберите оборудование </option>
               <option value="1">p1</option>
@@ -333,7 +334,7 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
+          <button id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">+ Добавить поле </button>
         </div>
 
 
@@ -351,7 +352,7 @@
 
         <div>
           <div class="row">
-            <input type="text" name="equipment[handWrite]" id="string" value='{{equipment.handWrite}}' class="txt"
+            <input type="text" name="equipment[handWrite]" id="string" value='{{equipment.handWrite}}' class="txt1"
               tabindex="17" placeholder="Оборудование">
             <input type="text" name="equipment[timeHandWrite]" value='{{equipment.timeHandWrite}}' id="string"
               class="txt" tabindex="17" placeholder="Время работы на оборудовании, мин" size="30">
@@ -359,22 +360,22 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
+          <button id="stringAdd" class="addplus" tabindex="17">+ Добавить поле </button>
         </div>
         <hr align="center" size="2" width="100%" class="height">
       </div>
-    </div>
+    </div> <a name='title5'> </a>
 
-    <hr align="center" size="3" color="black" width="100%">
+    <hr align="center" size="3" color="black" width="100%" class="indent">
     <hr align="center" size="3" color="black" width="100%">
     {{!------------------------------------------------------
     ---------------------------------------------------------------}}
     <div id="block">
-      <h2 class="keyWord"> <a name='title5'> Расходные Материалы </a> </h2>
+      <h2 class="keyWord">Расходные Материалы </h2>
       <div id="column">
 
         <div>
-          <div id="materialUp" class="row">
+          <div id="materialUp" class="row1">
             <select type="text" name="materials[choosed]" value='{{materials.choosed}}' id="string" class="txt"
               tabindex="11" size="1" required>
               <option value="none" hidden="">Выберите Материал </option>
@@ -402,7 +403,7 @@
 
           <hr align="center" size="2" width="100%">
 
-          <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
+          <button id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">+ Добавить поле </button>
 
           <hr align="center" size="2" width="100%" class="height">
 
@@ -413,7 +414,7 @@
           <hr align="center" size="3" color="black" width="100%"> --}}
 
           <div>
-            <div id="materialUp" class="row">
+            <div id="materialUp" class="row1">
               <input type="number" name="materials[handWrite]" value='{{materials.handWrite}}' id="string" class="txt"
                 tabindex="17" placeholder="Материал" size="30">
 
@@ -438,18 +439,19 @@
             <hr align="center" size="2" width="100%">
 
 
-            <input id="stringAdd" class="addplus" tabindex="17" value="+ добавить поле ">
+            <button id="stringAdd" class="addplus" tabindex="17">+ Добавить поле </button>
           </div>
           <hr align="center" size="2" width="100%" class="height">
         </div>
       </div>
     </div>
     {{/each}}
-    <select name='currentdepartment'>
-      <option>0</option>
-    </select>
-    <button class="sliding-button ">Отправить заявку!</button>
-
+    <div id="finalBut">
+      <select name='currentdepartment' id="string">
+        <option>0</option>
+      </select>
+      <button class="gradient-button ">Отправить заявку!</button>
+    </div>
     {{!------------------------------------------------------
     ---------------------------------------------------------------}}
   </form>
