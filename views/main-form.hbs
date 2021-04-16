@@ -484,7 +484,7 @@
   </select>
   {{#if status}}
   <button class="gradient-button ">Редактировать!</button>
-  <button class="gradient-button ">Удалить</button>
+  <button id="delete" class="gradient-button" data-id="{{../entryId}}">Удалить</button>
   {{else}}
   <button class="gradient-button ">Отправить заявку!</button>
   {{/if}}
