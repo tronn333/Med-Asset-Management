@@ -3,17 +3,16 @@ const logger = require('morgan');
 const path = require('path');
 const mongoose = require("mongoose");
 
-// Импортируем созданный в отдельный файлах рутеры.
+
 const app = express();
 const sessions = require('express-session');
 const MongoStore = require('connect-mongo');
 const loginRouter = require("./routes/login");
 const users = require('./models/user');
 
-// Сообщаем express, что в качестве шаблонизатора используется "hbs".
+
 app.set('view engine', 'hbs');
-app.set('cookieName', 'nashi')
-// Сообщаем express, что шаблона шаблонизаторая (вью) находятся в папке "ПапкаПроекта/views".
+app.set('cookieName', 'nashi');
 app.set('views', path.join(__dirname, 'views'));
 const secretKey = 'cf95b6c5004fd0370529b8b6ee262fc99183f800e9bf6e5e625ac043326f2777d3b17a21e00d4bb3f2de63d9506f17b228050'
 app.use(sessions({
@@ -41,12 +40,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 // Подключаем middleware, которое позволяет читать переменные JavaScript, сохранённые в формате JSON в body HTTP-запроса.
 app.use(express.json());
-app.use((req,res,next)=>{
-    const userId = req.session?.user?.id
-    if (userId || req.path === '/login') {
-        return next()
-    }
-    return res.redirect('/login')
+app.use((req, res, next) => {
+  const userId = req.session?.user?.id
+  if (userId || req.path === '/login') {
+    return next()
+  }
+  return res.redirect('/login')
 })
 
 app.use(async (req, res, next) => {
@@ -54,11 +53,12 @@ app.use(async (req, res, next) => {
   if (userId) {
     const currentUser = await users.findById(userId)
     if (currentUser) {
+      res.locals.department = currentUser.department
       res.locals.name = currentUser.name
-      res.locals.email  =currentUser.email
+      res.locals.email = currentUser.email
       res.locals.id = currentUser._id
-      if (currentUser.admin=="false"){
-        res.locals.neadmin=true
+      if (currentUser.admin == "false") {
+        res.locals.neadmin = true
       }
     }
   }

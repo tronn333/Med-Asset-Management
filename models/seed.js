@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose') /// seeder for fake users for testing
 const faker = require('faker');
 const User = require("./user")
 mongoose.connect('mongodb://localhost:27017/studyproject', {
