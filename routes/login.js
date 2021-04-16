@@ -63,7 +63,7 @@ router.get("/entry/:id", async (req, res) => {
   } else{
     res.locals.status = application.status
   }
-  console.log(application);
+  // console.log(application);
   res.render("main-form", { application });
 });
 
@@ -92,6 +92,23 @@ router.post("/entry/:id", async (req, res) => {
   });
   res.redirect("/homepage");
 });
+router.post("/updateentry/:id", async (req,res) =>{
+  const application = await entry.findOneAndUpdate({_id:req.params.id},req.body)
+  for (const item in req.body) {
+    if (req.body[item] == 'none' || req.body[item] == '') {
+      delete req.body[item]
+    }
+    // console.log(typeof req.body[item]);
+    if (typeof req.body[item] === 'object') {
+      for (const key in req.body[item]) {
+        if (req.body[item][key] == 'none' || req.body[item][key] == '') {
+          delete req.body[item][key]
+        }
+      }
+    }
+  }
+  res.redirect("/homepage");
+})
 
 router.get("/entry/:id/history", async (req, res) => {
   const idEntry = req.params.id;
