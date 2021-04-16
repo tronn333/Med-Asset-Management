@@ -34,7 +34,7 @@
           <label for="email"> Медицинский центр<span class="req">*</span></label>
           <select type="text" name="medcenter" id="string" class="txt" tabindex="2" value='{{this.medcenter}}' required
             size="1">
-            <option value="none" hidden="">Выберите тип</option>
+            <option value="none" hidden="">{{#if medcenter}} '{{medcenter}}' {{else}} Выберите тип{{/if}}</option>
             <option value="1">p1</option>
             <option value="2">p2</option>
           </select>
@@ -46,7 +46,7 @@
           <label for="subject"> Подразделение <span class="req">*</span></label>
           <select type="text" name="division" id="string" class="txt" value='{{this.division}}' required tabindex="3"
             size="1">
-            <option value="none" hidden="">Выберите тип</option>
+            <option value="none" hidden="">{{#if this.division}} '{{this.division}}' {{else}} Выберите тип{{/if}}</option>
             <option value="1">p1</option>
             <option value="2">p2</option>
           </select>
@@ -60,7 +60,7 @@
           <label for="message"> Специализация <span class="req">*</span></label>
           <select type="text" name="specialisation" id="string" class="txt" required value='{{this.specialisation}}'
             tabindex="4" size="1">
-            <option value="none" hidden="">Выберите тип</option>
+            <option value="none" hidden="">{{#if this.specialisation}} '{{this.specialisation}}' {{else}} Выберите тип{{/if}}</option>
             <option value="1">p1</option>
             <option value="2">p2</option>
           </select>
@@ -74,7 +74,7 @@
 
           <select type="text" name="anestasia" id="string" class="txt" required value='{{anestasia}}' tabindex="5"
             size="1">
-            <option value="none" hidden="">Выберите тип</option>
+            <option value="none" hidden="">{{#if this.anestasia}} '{{this.anestasia}}' {{else}} Выберите тип{{/if}}</option>
             <option value="1">Да</option>
             <option value="2">Нет</option>
           </select>
@@ -85,8 +85,10 @@
 
         <div class="row" id="anestesia" style="display: none;">
           <label for="message"> Вид анестезии <span class="req">*</span></label>
-          <select type="text" name="anestasiaType" id="string" class="txt" required value='{{anestesiaType}}' tabindex="5" size="1">
-            <option value="none" hidden="">{{#if anestasiaType}} '{{anestasiaType}}' {{else}} Выберите тип{{/if}}</option>
+          <select type="text" name="anestasiaType" id="string" class="txt" required value='{{anestesiaType}}'
+            tabindex="5" size="1">
+            <option value="none" hidden="">{{#if anestasiaType}} '{{anestasiaType}}' {{else}} Выберите тип{{/if}}
+            </option>
 
             <option value="1">p1</option>
             <option value="2">p2</option>
@@ -222,15 +224,32 @@
       <h2 class="keyWord"> Трудозатраты </h2>
       <div id="column">
         <div>
-          <div class="row">
-            <select type="text" name="laborCost[choosed]" value='{{this.laborCost.choosed}}'id="string" class="txt" tabindex="11" size="1">
-              <option value="none" hidden="">{{#if laborCost.choosed}} '{{laborCost.choosed}}' {{else}} Выберите Исполнителя{{/if}} </option>
+          {{#if laborcost.choosed.length}}
+           {{#each laborcost.choosed}}
+           <select type="text" name="laborCost[choosed]"  id="string" class="txt"
+              tabindex="11" size="1">
+              <option value="none" hidden="">{{#if this}} '{{this}}' {{else}} Выберите
+                Исполнителя{{/if}} </option>
               <option value="1">p1</option>
               <option value="2">p2</option>
             </select>
             <input type="number" name="laborCost[time]" value='{{laborCost.time}}' id="string" class="txt" tabindex="17"
               placeholder="Время работы, мин" size="30">
           </div>
+          {{/each}}
+          {{else}}
+          <div class="row">
+            <select type="text" name="laborCost[choosed]" value='{{this.laborCost.choosed}}' id="string" class="txt"
+              tabindex="11" size="1">
+              <option value="none" hidden="">{{#if laborCost.choosed}} '{{laborCost.choosed}}' {{else}} Выберите
+                Исполнителя{{/if}} </option>
+              <option value="1">p1</option>
+              <option value="2">p2</option>
+            </select>
+            <input type="number" name="laborCost[time]" value='{{laborCost.time}}' id="string" class="txt" tabindex="17"
+              placeholder="Время работы, мин" size="30">
+          </div>
+          {{/if}}
 
           <hr align="center" size="2" width="100%">
 
@@ -271,15 +290,17 @@
       <div id="column">
         <div>
           <div class="row">
-            <select type="text" name="premises[choosed]" value='{{premises.choosed}}' id="string" class="txt" tabindex="11" size="1">
-              <option value="none" hidden="">{{#if premises.choosed}} '{{premises.choosed}}' {{else}} Выберите Помещение{{/if}}</option>
+            <select type="text" name="premises[choosed]" value='{{premises.choosed}}' id="string" class="txt"
+              tabindex="11" size="1">
+              <option value="none" hidden="">{{#if premises.choosed}} '{{premises.choosed}}' {{else}} Выберите
+                Помещение{{/if}}</option>
               <option value="1">p1</option>
               <option value="2">p2</option>
             </select>
             <input type="number" name="premises[time]" value='{{premises.time}}' id="string" class="txt" tabindex="17"
               placeholder="Время работы в помещении, мин" size="30">
           </div>
-              
+
 
           <hr align="center" size="2" width="100%">
 
@@ -324,7 +345,8 @@
           <div class="row">
             <select type="text" name="equipment[choosed]" value='{{equipmentchoosed}}' id="string" class="txt1"
               tabindex="11" size="1">
-              <option value="none" hidden="">{{#if equipment.choosed}} '{{equipment.choosed}}' {{else}} Выберите Оборудование{{/if}}</option>
+              <option value="none" hidden="">{{#if equipment.choosed}} '{{equipment.choosed}}' {{else}} Выберите
+                Оборудование{{/if}}</option>
               <option value="1">p1</option>
               <option value="2">p2</option>
             </select>
@@ -379,13 +401,16 @@
           <div id="materialUp" class="row1">
             <select type="text" name="materials[choosed]" value='{{materials.choosed}}' id="string" class="txt"
               tabindex="11" size="1" required>
-              <option value="none" hidden="">{{#if materials.choosed}} '{{materials.choosed}}' {{else}} Выберите Помещение{{/if}}</option>
+              <option value="none" hidden="">{{#if materials.choosed}} '{{materials.choosed}}' {{else}} Выберите
+                Помещение{{/if}}</option>
               <option value="1">p1</option>
               <option value="2">p2</option>
             </select>
 
-            <select type="text" name="materials[using]" id="string" value= '{{materials.using}}' class="txt" tabindex="10" size="1" required>
-              <option value="none" hidden="">{{#if materials.using}} '{{materials.using}}' {{else}}Кол-во использование{{/if}}</option>
+            <select type="text" name="materials[using]" id="string" value='{{materials.using}}' class="txt"
+              tabindex="10" size="1" required>
+              <option value="none" hidden="">{{#if materials.using}} '{{materials.using}}' {{else}}Кол-во
+                использование{{/if}}</option>
               <option value="1">Многоразовое</option>
               <option value="2">Одноразовое</option>
             </select>
@@ -393,8 +418,10 @@
               tabindex="17" placeholder="Кол-во" required size="30">
 
 
-            <select type="text" name="materials[meter]" value='{{this.materials.meter}}'id="string" class="txt" tabindex="11" size="1" required>
-              <option value="none" hidden=""> {{#if materials.meter}} '{{materials.meter}}' {{else}}Единица{{/if}}</option>
+            <select type="text" name="materials[meter]" value='{{this.materials.meter}}' id="string" class="txt"
+              tabindex="11" size="1" required>
+              <option value="none" hidden=""> {{#if materials.meter}} '{{materials.meter}}' {{else}}Единица{{/if}}
+              </option>
               <option value="1">км</option>
               <option value="2">м</option>
             </select>
@@ -417,8 +444,10 @@
               <input type="number" name="materials[handWrite]" value='{{materials.handWrite}}' id="string" class="txt"
                 tabindex="17" placeholder="Материал" size="30">
 
-              <select type="text" name="materials[handWriteUsing]" value='{{materials.handWriteUsing}}' id="string" class="txt" tabindex="10" size="1">
-                <option value="none" hidden="">{{#if materials.handWriteUsing}} '{{materials.handWriteUsing}}' {{else}}Кол-во{{/if}}</option>
+              <select type="text" name="materials[handWriteUsing]" value='{{materials.handWriteUsing}}' id="string"
+                class="txt" tabindex="10" size="1">
+                <option value="none" hidden="">{{#if materials.handWriteUsing}} '{{materials.handWriteUsing}}'
+                  {{else}}Кол-во{{/if}}</option>
                 <option value="1">Многоразовое</option>
                 <option value="2">Одноразовое</option>
               </select>
@@ -426,8 +455,10 @@
                 class="txt" tabindex="17" placeholder="Кол-во" size="30">
 
 
-              <select type="text" name="materials[handWriteMeter]" id="string" value='{{materials.handWriteMeter}}' class="txt" tabindex="11" size="1">
-                <option value="none" hidden="">{{#if materials.handWriteMeter}} '{{materials.handWriteMeter}}' {{else}}Единица{{/if}}</option>
+              <select type="text" name="materials[handWriteMeter]" id="string" value='{{materials.handWriteMeter}}'
+                class="txt" tabindex="11" size="1">
+                <option value="none" hidden="">{{#if materials.handWriteMeter}} '{{materials.handWriteMeter}}'
+                  {{else}}Единица{{/if}}</option>
                 <option value="1">км</option>
                 <option value="2">м</option>
               </select>
