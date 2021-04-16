@@ -2,6 +2,7 @@ const router = require("express").Router();
 // const { Router } = require("express");
 const entry = require("../models/Entrie");
 const userModel = require("../models/user");
+const Comment = require("../models/comment");
 
 router.get("/", (req, res) => {
   res.redirect("/homepage");
@@ -56,15 +57,16 @@ router.get("/homepage", (req, res) => {
 });
 router.get("/entry/:id", async (req, res) => {
   let application = await entry.find({ _id: req.params.id })
-  console.log(application);
-  if (application.length === 0){
-    application.push(new entry({_id: req.params.id}))
+  res.locals.idEntry = req.params.id
+  if (application.length === 0) {
+    application.push(new entry({ _id: req.params.id }))
   }
   console.log(application);
-  res.render("main-form",{application});
+  res.render("main-form", { application });
 });
+
 router.post("/entry/:id", async (req, res) => {
-  req.body.initiator= req.session.user.id
+  req.body.initiator = req.session.user.id
   req.body._id = req.params.id
   req.body.currentdepartment = `${req.session.user.department}`
   for (const item in req.body) {
@@ -72,9 +74,8 @@ router.post("/entry/:id", async (req, res) => {
       delete req.body[item]
     }
     // console.log(typeof req.body[item]);
-    if (typeof req.body[item] === 'object'){
-      for (const key in req.body[item])
-      {
+    if (typeof req.body[item] === 'object') {
+      for (const key in req.body[item]) {
         if (req.body[item][key] == 'none' || req.body[item][key] == '') {
           delete req.body[item][key]
         }
@@ -82,9 +83,21 @@ router.post("/entry/:id", async (req, res) => {
     }
   }
   let application = await entry.create(req.body)
+  let comment = await Comment.create({
+    user: req.body.initiator,
+    entrie: req.params.id,
+    comment: req.body.comment
+  });
   res.redirect("/homepage");
 });
 
+router.get("/entry/:id/history", async (req, res) => {
+  const idEntry = req.params.id;
+  console.log("IDDDDDDD", idEntry);
+  const entrys = await Comment.find({ entrie: idEntry }).populate("user");
+  console.log("_________", entrys);
+  res.render("history", { entrys });
+});
 
 
 module.exports = router;
