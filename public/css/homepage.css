@@ -40,8 +40,8 @@ a {
   padding: 10px 16px;
   background: rgb(255, 255, 255);
   color: #d1d1d1;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   z-index: 1000;
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -62,5 +62,6 @@ a {
 
 #head {
   display: flex;
-  justify-self: flex-end;
+  justify-content: flex-end;
+  /* flex-direction: column; */
 }

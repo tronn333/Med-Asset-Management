@@ -13,7 +13,7 @@
   <h2><a class="head" href="#title5" style="color: black;">Материалы </a> </h2>
   <h2><a class="head" href="#title6" style="color: black;">История </a> </h2>
 </div>
-
+{{#each application}}
 <div id="w">
   <form id="contactform" name="contact" method="post" action="#">
 
@@ -31,7 +31,8 @@
         <hr align="center" size="2" width="100%">
         <div class="row">
           <label for="email"> Медицинский центр<span class="req">*</span></label>
-          <select type="text" name="medcenter" id="string" class="txt" tabindex="2" size="1">
+          <select type="text" name="medcenter" id="string" class="txt" tabindex="2" value='{{this.medcenter}}' required
+            size="1">
             <option value="none" hidden="">Выберите тип</option>
             <option value="1">p1</option>
             <option value="2">p2</option>
@@ -42,7 +43,8 @@
 
         <div class="row">
           <label for="subject"> Подразделение <span class="req">*</span></label>
-          <select type="text" name="division" id="string" class="txt" tabindex="3" size="1">
+          <select type="text" name="division" id="string" class="txt" value='{{this.division}}' required tabindex="3"
+            size="1">
             <option value="none" hidden="">Выберите тип</option>
             <option value="1">p1</option>
             <option value="2">p2</option>
@@ -55,7 +57,8 @@
 
         <div class="row">
           <label for="message"> Специализация <span class="req">*</span></label>
-          <select type="text" name="specialisation" id="string" class="txt" tabindex="4" size="1">
+          <select type="text" name="specialisation" id="string" class="txt" required value='{{this.specialisation}}'
+            tabindex="4" size="1">
             <option value="none" hidden="">Выберите тип</option>
             <option value="1">p1</option>
             <option value="2">p2</option>
@@ -67,7 +70,8 @@
 
         <div class="row">
           <label for="message"> Анестезия <span class="req">*</span></label>
-          <select type="text" name="anestasia" id="string" class="txt" tabindex="5" size="1">
+          <select type="text" name="anestasia" id="string" class="txt" required value='{{anestasia}}' tabindex="5"
+            size="1">
             <option value="none" hidden="">Выберите тип</option>
             <option value="1">Да</option>
             <option value="2">Нет</option>
@@ -79,7 +83,8 @@
 
         <div class="row" id="anestesia" style="display: none;">
           <label for="message"> Вид анестезии <span class="req">*</span></label>
-          <select type="text" name="anestasiaType" id="string" class="txt" tabindex="5" size="1">
+          <select type="text" name="anestasiaType" id="string" class="txt" required value='{{anestesiaType}}'
+            tabindex="5" size="1">
             <option value="none" hidden="">Выберите тип</option>
             <option value="1">p1</option>
             <option value="2">p2</option>
@@ -92,8 +97,8 @@
 
         <div class="row">
           <label for="name"> Код услуги <span class="req"></span></label>
-          <input type="text" name="serviceCode" {{#if neadmin}} readonly {{/if}} id="string" class="txt" tabindex="6"
-            placeholder="Код услуги">
+          <input type="text" name="serviceCode" value='{{this.serviceCode}}' {{#if neadmin}} readonly {{/if}}
+            id="string" class="txt" tabindex="6" placeholder="Код услуги">
         </div>
 
 
@@ -103,7 +108,8 @@
 
         <div class="row">
           <label for="name"> Название услуги на русском <span class="req">*</span></label>
-          <input type="text" name="serviceNameRus" id="string" class="txt" tabindex="7" placeholder="на русском">
+          <input type="text" name="serviceNameRus" id="string" value='{{this.serviceNameRus}}' required class="txt"
+            tabindex="7" placeholder="на русском">
         </div>
 
         <hr align="center" size="2" width="100%">
@@ -112,7 +118,8 @@
 
         <div class="row">
           <label for="name"> Название услуги на английском <span class="req"></span></label>
-          <input type="text" name="serviceNameEng" id="string" class="txt" tabindex="8" placeholder="на английском">
+          <input type="text" name="serviceNameEng" value='{{this.serviceNameEng}}' id="string" class="txt" tabindex="8"
+            placeholder="на английском">
         </div>
 
         <hr align="center" size="2" width="100%">
@@ -121,8 +128,8 @@
 
         <div class="row">
           <label for="name"> Стоимость, у.е. <span class="req">*</span></label>
-          <input type="text" name="price" id="string" {{#if neadmin}} readonly {{/if}} class="txt" tabindex="9"
-            placeholder="Стоимость">
+          <input type="text" name="price" id="string" value='{{this.price}}' required {{#if neadmin}} readonly {{/if}}
+            class="txt" tabindex="9" placeholder="Стоимость">
         </div>
 
         <hr align="center" size="2" width="100%">
@@ -131,7 +138,7 @@
 
         <div class="row">
           <label for="message"> Субподряд <span class="req">*</span></label>
-          <select type="text" name="subpodryad" id="string" class="txt" tabindex="10" size="1">
+          <select type="text" name="subpodryad" id="string" required class="txt" tabindex="10" size="1">
             <option value="none" hidden="">Выберите тип</option>
             <option value="1">Да</option>
             <option value="2">Нет</option>
@@ -146,7 +153,8 @@
 
         <div class="row" id="subpodryad2" style="display: none;">
           <label for="message"> Субподрядная организация <span class="req">*</span></label>
-          <select type="text" name="subpodryadOrg" id="string" class="txt" tabindex="11" size="1">
+          <select type="text" name="subpodryadOrg" id="string" value='{{thissubpodryadOrg}}' required class="txt"
+            tabindex="11" size="1">
             <option value="none" hidden="">Выберите тип</option>
             <option value="1">1</option>
             <option value="2">p2</option>
@@ -159,7 +167,8 @@
 
         <div class="row" id="subpodryad4" style="display: none;">
           <label for="name"> Стоимость субподряда <span class="req">*</span></label>
-          <input type="number" name="priceSubpodryad" id="string" class="txt" tabindex="12" placeholder="субподряд">
+          <input type="number" name="priceSubpodryad" value='{{this.priceSubpodryad}}' id="string" required class="txt"
+            tabindex="12" placeholder="субподряд">
         </div>
 
         <hr align="center" size="2" width="100%">
@@ -168,8 +177,8 @@
 
         <div class="row">
           <label for="name"> Кол-во услуг в месяц <span class="req"></span></label>
-          <input type="number" name="numberOfServices" id="string" class="txt" tabindex="13"
-            placeholder=" Кол-во услуг">
+          <input type="number" name="numberOfServices" id="string" value='{{this.numberOfServices}}' class="txt"
+            tabindex="13" placeholder=" Кол-во услуг">
         </div>
 
         <hr align="center" size="2" width="100%">
@@ -178,7 +187,8 @@
 
         <div class="row">
           <label for="name"> Аналог услуги <span class="req"></span></label>
-          <input type="text" name="serviceAnalog" id="string" class="txt" tabindex="14" placeholder="Аналог услуги">
+          <input type="text" name="serviceAnalog" id="string" value='{{this.serviceAnalog}}' class="txt" tabindex="14"
+            placeholder="Аналог услуги">
         </div>
 
         <hr align="center" size="2" width="100%">
@@ -193,7 +203,8 @@
 
         <div class="row">
           <label for="name"> Дата запуска услуги <span class="req"></span></label>
-          <input type="date" name="dateOfStart" id="string" class="txt" tabindex="17" placeholder="Дата">
+          <input type="date" name="dateOfStart" value='{{this.dateOfStart}}' id="string" class="txt" tabindex="17"
+            placeholder="Дата">
         </div>
 
         <hr align="center" size="2" width="100%">
@@ -209,12 +220,13 @@
       <div id="column">
         <div>
           <div class="row">
-            <select type="text" name="laborCost[choosed]" id="string" class="txt" tabindex="11" size="1">
+            <select type="text" name="laborCost[choosed]" value='{{this.laborCost.choosed}}' id="string" class="txt"
+              tabindex="11" size="1">
               <option value="none" hidden="">Выберите исполнителя </option>
               <option value="1">p1</option>
               <option value="2">p2</option>
             </select>
-            <input type="number" name="laborCost[time]" id="string" class="txt" tabindex="17"
+            <input type="number" name="laborCost[time]" value='{{laborCost.time}}' id="string" class="txt" tabindex="17"
               placeholder="Время работы, мин" size="30">
           </div>
 
@@ -233,10 +245,10 @@
 
         <div>
           <div class="row">
-            <input type="text" name="laborCost[handWrite]" id="string" class="txt" tabindex="17"
-              placeholder="Исполнитель">
-            <input type="text" name="laborCost[timeHandWrite]" id="string" class="txt" tabindex="17"
-              placeholder="Время работы, мин" size="30">
+            <input type="text" name="laborCost[handWrite]" value='{{laborCost.handWrite}}' id="string" class="txt"
+              tabindex="17" placeholder="Исполнитель">
+            <input type="text" name="laborCost[timeHandWrite]" value='{{laborCost.timeHandWrite}}' id="string"
+              class="txt" tabindex="17" placeholder="Время работы, мин" size="30">
           </div>
 
           <hr align="center" size="2" width="100%">
@@ -257,12 +269,13 @@
       <div id="column">
         <div>
           <div class="row">
-            <select type="text" name="premises[choosed]" id="string" class="txt" tabindex="11" size="1">
+            <select type="text" name="premises[choosed]" value='{{premises.choosed}}' id="string" class="txt"
+              tabindex="11" size="1">
               <option value="none" hidden="">Выберите Помещение </option>
               <option value="1">p1</option>
               <option value="2">p2</option>
             </select>
-            <input type="number" name="premises[time]" id="string" class="txt" tabindex="17"
+            <input type="number" name="premises[time]" value='{{premises.time}}' id="string" class="txt" tabindex="17"
               placeholder="Время работы в помещении, мин" size="30">
           </div>
 
@@ -281,9 +294,10 @@
 
         <div>
           <div class="row">
-            <input type="text" name="premises[handWrite]" id="string" class="txt" tabindex="17" placeholder="Помещение">
-            <input type="text" name="premises[timeHandWrite]" id="string" class="txt" tabindex="17"
-              placeholder="Время работы в помещении, мин" size="30">
+            <input type="text" name="premises[handWrite]" value='{{premises.handWrite}}' id="string" class="txt"
+              tabindex="17" placeholder="Помещение">
+            <input type="text" name="premises[timeHandWrite]" value='{{premises.timeHandWrite}}' id="string" class="txt"
+              tabindex="17" placeholder="Время работы в помещении, мин" size="30">
           </div>
 
           <hr align="center" size="2" width="100%">
@@ -306,12 +320,13 @@
       <div id="column">
         <div>
           <div class="row">
-            <select type="text" name="equipment[choosed]" id="string" class="txt" tabindex="11" size="1">
+            <select type="text" name="equipment[choosed]" value='{{equipmentchoosed}}' id="string" class="txt"
+              tabindex="11" size="1">
               <option value="none" hidden="">Выберите оборудование </option>
               <option value="1">p1</option>
               <option value="2">p2</option>
             </select>
-            <input type="number" name="equipment[time]" id="string" class="txt" tabindex="17"
+            <input type="number" name="equipment[time]" value='{{equipment.time}}' id="string" class="txt" tabindex="17"
               placeholder="Время работы на оборудовании, мин" size="30">
           </div>
 
@@ -336,10 +351,10 @@
 
         <div>
           <div class="row">
-            <input type="text" name="equipment[handWrite]" id="string" class="txt" tabindex="17"
-              placeholder="Оборудование">
-            <input type="text" name="equipment[timeHandWrite]" id="string" class="txt" tabindex="17"
-              placeholder="Время работы на оборудовании, мин" size="30">
+            <input type="text" name="equipment[handWrite]" id="string" value='{{equipment.handWrite}}' class="txt"
+              tabindex="17" placeholder="Оборудование">
+            <input type="text" name="equipment[timeHandWrite]" value='{{equipment.timeHandWrite}}' id="string"
+              class="txt" tabindex="17" placeholder="Время работы на оборудовании, мин" size="30">
           </div>
 
           <hr align="center" size="2" width="100%">
@@ -360,22 +375,25 @@
 
         <div>
           <div id="materialUp" class="row">
-            <select type="text" name="materials[choosed]" id="string" class="txt" tabindex="11" size="1" required>
+            <select type="text" name="materials[choosed]" value='{{materials.choosed}}' id="string" class="txt"
+              tabindex="11" size="1" required>
               <option value="none" hidden="">Выберите Материал </option>
               <option value="1">p1</option>
               <option value="2">p2</option>
             </select>
 
-            <select type="text" name="materials[using]" id="string" class="txt" tabindex="10" size="1" required>
+            <select type="text" name="materials[using]" id="string" value='{{materials.using}}' class="txt"
+              tabindex="10" size="1" required>
               <option value="none" hidden="">Кол-во использование </option>
               <option value="1">Многоразовое</option>
               <option value="2">Одноразовое</option>
             </select>
-            <input type="number" name="materials[much]" id="string" class="txt" tabindex="17" placeholder="Кол-во"
-              required size="30">
+            <input type="number" name="materials[much]" id="string" class="txt" value='{{this.materials.much}}'
+              tabindex="17" placeholder="Кол-во" required size="30">
 
 
-            <select type="text" name="materials[meter]" id="string" class="txt" tabindex="11" size="1" required>
+            <select type="text" name="materials[meter]" value='{{this.materials.meter}}' id="string" class="txt"
+              tabindex="11" size="1" required>
               <option value="none" hidden=""> Еденица измерения </option>
               <option value="1">км</option>
               <option value="2">м</option>
@@ -396,19 +414,21 @@
 
           <div>
             <div id="materialUp" class="row">
-              <input type="number" name="materials[handWrite]" id="string" class="txt" tabindex="17"
-                placeholder="Материал" size="30">
+              <input type="number" name="materials[handWrite]" value='{{materials.handWrite}}' id="string" class="txt"
+                tabindex="17" placeholder="Материал" size="30">
 
-              <select type="text" name="materials[handWriteUsing]" id="string" class="txt" tabindex="10" size="1">
+              <select type="text" name="materials[handWriteUsing]" value='{{materials.handWriteUsing}}' id="string"
+                class="txt" tabindex="10" size="1">
                 <option value="none" hidden="">Кол-во использование </option>
                 <option value="1">Многоразовое</option>
                 <option value="2">Одноразовое</option>
               </select>
-              <input type="number" name="materials[handWriteMuch]" id="string" class="txt" tabindex="17"
-                placeholder="Кол-во" size="30">
+              <input type="number" name="materials[handWriteMuch]" value='{{materials.handWriteMuch}}' id="string"
+                class="txt" tabindex="17" placeholder="Кол-во" size="30">
 
 
-              <select type="text" name="materials[handWriteMeter]" id="string" class="txt" tabindex="11" size="1">
+              <select type="text" name="materials[handWriteMeter]" id="string" value='{{materials.handWriteMeter}}'
+                class="txt" tabindex="11" size="1">
                 <option value="none" hidden=""> Еденица измерения </option>
                 <option value="1">км</option>
                 <option value="2">м</option>
@@ -424,8 +444,9 @@
         </div>
       </div>
     </div>
-    <select>
-      <option name='currentdepartment' value='0'></option>
+    {{/each}}
+    <select name='currentdepartment'>
+      <option>0</option>
     </select>
     <button class="sliding-button ">Отправить заявку!</button>
 
