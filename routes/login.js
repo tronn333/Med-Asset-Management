@@ -4,23 +4,23 @@ const entry = require("../models/Entrie");
 const userModel = require("../models/user");
 const Comment = require("../models/comment");
 
-router.get("/", (req, res) => {
+router.get("/", (req, res) => { // redirect to homepage
   res.redirect("/homepage");
 })
-router.get('/logout', (req, res) => {
+router.get('/logout', (req, res) => { //when logOut delete session and redirect to home page
   req.session.destroy((err) => {
     if (err) return res.redirect('/')
     res.clearCookie(req.app.get('cookieName'))
     return res.redirect('/')
   })
 });
-router.get('/yourforms', async (req, res) => {
+router.get('/yourforms', async (req, res) => { //render for all entry of departement of user
   const entries = await entry.find({ currentdepartment: `${req.session.user.department}` })
   // console.log(entries)
   res.render('allforms', { entries })
 })
 
-router.get("/allforms", async (req, res) => {
+router.get("/allforms", async (req, res) => { // render of all entry
   const entries = await entry.find()
   console.log(entries)
   res.render('allforms', { entries })
@@ -57,10 +57,10 @@ router.get("/homepage", (req, res) => {
 });
 router.get("/entry/:id", async (req, res) => {
   let application = await entry.find({ _id: req.params.id })
- 
+
   if (application.length === 0) {
     application.push(new entry({ _id: req.params.id }))
-  } else{
+  } else {
     res.locals.status = application.status
   }
   // console.log(application);
@@ -70,7 +70,7 @@ router.get("/entry/:id", async (req, res) => {
 router.post("/entry/:id", async (req, res) => {
   req.body.initiator = req.session.user.id
   req.body._id = req.params.id
-  req.body.status='sent'
+  req.body.status = 'sent'
   for (const item in req.body) {
     if (req.body[item] == 'none' || req.body[item] == '') {
       delete req.body[item]

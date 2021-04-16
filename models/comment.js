@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose')//schema for bd  of comment
 const commentSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
