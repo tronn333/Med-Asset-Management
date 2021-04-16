@@ -26,7 +26,7 @@ router.get("/allforms", async (req, res) => {
 })
 router.get("/newform", async (req, res) => {
   const newEntry = new entry({ status: 'editing', initiator: req.session.user.id, currentdepartment: `${req.session.user.department}` })
-  console.log(newEntry._id);
+  // console.log(newEntry._id);
   // await entry.create(newEntry)
   res.redirect(`entry/${newEntry._id}`)
 })
@@ -55,8 +55,14 @@ router.get("/homepage", (req, res) => {
   res.render("homepage");
 });
 router.get("/entry/:id", async (req, res) => {
-  const application = await entry.find({ _id: req.params.id })
-  res.render("main-form", application);
+  let application = await entry.find({ _id: req.params.id })
+  // res.locals.entry = {application} 
+  console.log(application);
+  if (application.length === 0){
+    application = new entry({ status: 'editing', initiator: req.session.user.id, currentdepartment: `${req.session.user.department}` })
+  }
+  console.log(application);
+  res.render("main-form",{application});
 });
 router.post("/entry/:id", async (req, res) => {
   req.body.initiator= req.session.user.id
