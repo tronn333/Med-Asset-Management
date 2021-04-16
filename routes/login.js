@@ -25,7 +25,7 @@ router.get("/allforms", async (req, res) => {
   res.render('allforms', { entries })
 })
 router.get("/newform", async (req, res) => {
-  const newEntry = new entry({ status: 'editing', initiator: req.session.user.id, currentdepartment: `${req.session.user.department}` })
+  const newEntry = new entry()
   // console.log(newEntry._id);
   // await entry.create(newEntry)
   res.redirect(`entry/${newEntry._id}`)
@@ -56,10 +56,9 @@ router.get("/homepage", (req, res) => {
 });
 router.get("/entry/:id", async (req, res) => {
   let application = await entry.find({ _id: req.params.id })
-  // res.locals.entry = {application} 
   console.log(application);
   if (application.length === 0){
-    application = new entry({ status: 'editing', initiator: req.session.user.id, currentdepartment: `${req.session.user.department}` })
+    application.push(new entry({_id: req.params.id}))
   }
   console.log(application);
   res.render("main-form",{application});
