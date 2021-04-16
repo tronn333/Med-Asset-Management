@@ -21,8 +21,9 @@ router.get('/yourforms', async (req, res) => { //render for all entry of departe
 })
 
 router.get("/allforms", async (req, res) => { // render of all entry
-  const entries = await entry.find()
+  const entries = await entry.find().populate("initiator")
   console.log(entries)
+
   res.render('allforms', { entries })
 })
 router.get("/newform", async (req, res) => {
@@ -62,8 +63,9 @@ router.get("/entry/:id", async (req, res) => {
     application.push(new entry({ _id: req.params.id }))
   } else {
     res.locals.status = application.status
+    res.locals.entryId = req.params.id
   }
-  console.log(application);
+  // console.log(application);
   res.render("main-form", { application });
 });
 
@@ -92,6 +94,23 @@ router.post("/entry/:id", async (req, res) => {
   });
   res.redirect("/homepage");
 });
+router.post("/updateentry/:id", async (req,res) =>{
+  const application = await entry.findOneAndUpdate({_id:req.params.id},req.body)
+  for (const item in req.body) {
+    if (req.body[item] == 'none' || req.body[item] == '') {
+      delete req.body[item]
+    }
+    // console.log(typeof req.body[item]);
+    if (typeof req.body[item] === 'object') {
+      for (const key in req.body[item]) {
+        if (req.body[item][key] == 'none' || req.body[item][key] == '') {
+          delete req.body[item][key]
+        }
+      }
+    }
+  }
+  res.redirect("/homepage");
+})
 
 router.get("/entry/:id/history", async (req, res) => {
   const idEntry = req.params.id;

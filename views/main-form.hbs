@@ -11,12 +11,12 @@
   <h2><a class="head" href="#title3" style="color: black;">Помещение </a> </h2>
   <h2><a class="head" href="#title4" style="color: black;">Оборудование </a> </h2>
   <h2><a class="head" href="#title5" style="color: black;">Материалы </a> </h2>
-  <h2><a class="head" href="#title6" style="color: black;">История </a> </h2>
+  <h2><a class="head" href="/entry/{{entryId}}/history" style="color: black;">История </a> </h2>
   <h2><a class="head" href="/homepage" style="color: black;">Домой </a> </h2>
 </div>
 
 <div id="w">
-  <form id="contactform" name="contact" {{#if status}} method='PUT' {{else}} method="post" {{/if}} action="#">
+  <form id="contactform" name="contact" {{#each application}} {{#if status}} method='POST' action='/updateentry/{{_id}}' {{else}} method="post" action="#" {{/if}} {{/each}} >
 
     <hr align="center" size="3" color="black" width="100%">
 
@@ -473,7 +473,6 @@
         </div>
       </div>
     </div>
-    {{/each}}
     <div id="finalBut">
       <select name='currentdepartment' id="string">
         <option>0</option>
@@ -486,6 +485,7 @@
       <button class="gradient-button ">Отправить заявку!</button>
       {{/if}}
     </div>
+    {{/each}}
     {{!------------------------------------------------------
     ---------------------------------------------------------------}}
   </form>
