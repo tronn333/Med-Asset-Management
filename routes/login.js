@@ -21,8 +21,9 @@ router.get('/yourforms', async (req, res) => { //render for all entry of departe
 })
 
 router.get("/allforms", async (req, res) => { // render of all entry
-  const entries = await entry.find()
+  const entries = await entry.find().populate("initiator")
   console.log(entries)
+
   res.render('allforms', { entries })
 })
 router.get("/newform", async (req, res) => {
@@ -62,6 +63,7 @@ router.get("/entry/:id", async (req, res) => {
     application.push(new entry({ _id: req.params.id }))
   } else {
     res.locals.status = application.status
+    res.locals.entryId = req.params.id
   }
   // console.log(application);
   res.render("main-form", { application });
